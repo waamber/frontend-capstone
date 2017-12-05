@@ -2,3 +2,27 @@
   height: 680px;
   width: 800px
 }
+
+.login-container {
+  border: 2px solid black;
+  height: 300px;
+
+  .about-app {
+    border: 2px solid black;
+    margin-top: 10px;
+    height: 100px;
+  }
+
+  .login-btn-container {
+    margin-top: 10px;
+
+    .google-btn {
+      padding: 0;
+    }
+
+    .google-btn-img {
+    height: 51px;
+   }
+  } 
+
+}

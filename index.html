@@ -12,29 +12,13 @@
   <title>Cache Me Outside</title>
 </head>
 
-<body ng-app="GeoCacheApp" ng-controller="DashboardCtrl" class="container">
+<body ng-app="GeoCacheApp">
 
-  <section class="angular-google-map-container">
-    <ui-gmap-google-map center="map.center" zoom="map.zoom">
-
-      <ui-gmap-markers models="caches" coords="'coords'" click="onClick">
-
-        <ui-gmap-windows show="show">
-          <div ng-non-bindable class="text-center">{{description}}
-            <div><button type="button" class="btn btn-warning btn-xs">Danger</button></div>
-          </div>
-
-        </ui-gmap-windows>
-
-      </ui-gmap-markers>
-
-    </ui-gmap-google-map>
-  </section>
-
+  <div ng-include="'./partials/navbar.html'"></div>
+  <div ng-view></div>
 
 
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
   <script type="text/javascript" src="./lib/node_modules/lodash/lodash.min.js"></script>
   <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -44,6 +28,7 @@
   <script type="text/javascript" src="./lib/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
   <script type="text/javascript" src="./lib/node_modules/angular-google-maps/dist/angular-google-maps.min.js"></script>
   <script type="text/javascript" src="./javascripts/angular_simple_logger.js"></script>
+  <!--<script type="text/javascript" src="./javascripts/google-maps.js"></script>-->
   <script type="text/javascript" src="./javascripts/app.js"></script>
 
   <script type="text/javascript" src="./javascripts/AppConstants.js"></script>

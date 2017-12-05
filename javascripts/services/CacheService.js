@@ -1,6 +1,6 @@
 'use strict';
 
-app.service("GeoCacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG) {
+geoApp.service("CacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG) {
 
   const getCaches = () => {
     let caches = [];
@@ -12,7 +12,6 @@ app.service("GeoCacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG)
           caches.push(fbCaches[key]);
         });
         resolve(caches);
-        console.log('caches', caches);
       }).catch((error) => {
         reject(error);
       });
