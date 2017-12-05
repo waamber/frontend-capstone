@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("DashboardCtrl", function ($rootScope, $scope, CacheService) {
+geoApp.controller("DashboardCtrl", function ($rootScope, $scope, AuthService, CacheService) {
 
   $scope.caches = [];
 
@@ -18,7 +18,7 @@ geoApp.controller("DashboardCtrl", function ($rootScope, $scope, CacheService) {
   };
 
   const caches = () => {
-    CacheService.getCaches($rootScope.uid).then((results) => {
+    CacheService.getCaches(AuthService.getCurrentUid()).then((results) => {
       $scope.caches = results;
       console.log($scope.caches);
     }).catch((error) => {

@@ -1,6 +1,6 @@
 'use strict';
 
-let isAuth = (AuthService) => new Promise((resolve, reject) => {
+const isAuth = (AuthService) => new Promise((resolve, reject) => {
   if (AuthService.isAuthenticated()) {
     resolve();
   } else {
@@ -10,11 +10,30 @@ let isAuth = (AuthService) => new Promise((resolve, reject) => {
 
 geoApp.run(function ($location, $rootScope, AuthService, FIREBASE_CONFIG) {
   firebase.initializeApp(FIREBASE_CONFIG);
+
+  $rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
+    const logged = AuthService.isAuthenticated();
+    let appTo;
+    if (currRoute.originalPath) {
+      appTo = currRoute.originalPath.indexOf('/auth') !== -1;
+    }
+    if (!appTo && !logged) {
+      event.preventDefault();
+      $rootScope.navbar = false;
+      $location.path('/auth');
+    } else if (appTo && !logged) {
+      $rootScope.navbar = false;
+    } else if (appTo && logged) {
+      $rootScope.navbar = true;
+      $location.path('/dashboard');
+    } else if (!appTo && logged) {
+      $rootScope.navbar = true;
+    }
+  });
 });
 
-
-
 geoApp.config(function ($routeProvider, GOOGLEMAPS_CONFIG, uiGmapGoogleMapApiProvider) {
+
   uiGmapGoogleMapApiProvider.configure({
     key: GOOGLEMAPS_CONFIG.apiKey
   });
