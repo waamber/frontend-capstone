@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css"></link>
+  <title>Cache Me Outside</title>
+</head>
+
+<body ng-app="GeoCacheApp" ng-controller="DashboardCtrl" class="container">
+
+  <section class="angular-google-map-container">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom">
+
+      <ui-gmap-markers models="caches" coords="'coords'" click="onClick">
+
+        <ui-gmap-windows show="show">
+          <div ng-non-bindable class="text-center">{{description}}
+            <div><button type="button" class="btn btn-warning btn-xs">Danger</button></div>
+          </div>
+
+        </ui-gmap-windows>
+
+      </ui-gmap-markers>
+
+    </ui-gmap-google-map>
+  </section>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+  <script type="text/javascript" src="./lib/node_modules/lodash/lodash.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-google-maps/dist/angular-google-maps.min.js"></script>
+  <script type="text/javascript" src="./javascripts/angular_simple_logger.js"></script>
+  <script type="text/javascript" src="./javascripts/app.js"></script>
+
+  <script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+  <script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+
+  <script type="text/javascript" src="./javascripts/services/AuthService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/CacheService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/BadgeService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/FoundByService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/HiddenByService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/UserService.js"></script>
+  <script type="text/javascript" src="./javascripts/services/GoogleMapsService.js"></script>
+
+  <script type="text/javascript" src="./javascripts/controllers/NewHideCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/NewFindCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/MyHidesCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/MyFindsCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/FindDetailCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/CacheDetailCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/BadgeCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/AuthCtrl.js"></script>
+  <script type="text/javascript" src="./javascripts/controllers/DashboardCtrl.js"></script>
+</body>
+
+</html>
