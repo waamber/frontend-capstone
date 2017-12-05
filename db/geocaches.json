@@ -1,0 +1,64 @@
+{
+  "caches": {
+    "cache0": {
+      "city": "Nashville",
+      "state": "TN",
+      "latitude": "36.170702",
+      "longitude": "-86.787422",
+      "description": "It's not the kind of mall you think it is."
+    },
+    "cache1": {
+      "city": "Nashville",
+      "state": "TN",
+      "latitude": "36.089102",
+      "longitude": "-86.740642",
+      "description": "Where the wild things are."
+    },
+    "cache2": {
+      "city": "Nashville",
+      "state": "TN",
+      "latitude": "36.128270",
+      "longitude": "-86.678059",
+      "description": "It's international af"
+    },
+    "cache3": {
+      "city": "Nashville",
+      "state": "TN",
+      "latitude": "36.083472",
+      "longitude": "-86.870167",
+      "description": "One of many golf courses."
+    }
+  },
+  "badges": {
+    "badge0": {
+      "achievement": "First Find",
+      "description": "You found your first cache!!!"
+    },
+    "badge1": {
+      "achievement": "First Hide",
+      "description": "You hid your first cache!"
+    }
+  },
+  "users": {
+    "user0": {
+      "uid": ""
+    },
+    "user2": {
+      "uid": ""
+    }
+  },
+  "foundBy": {
+    "foundBy0": {
+      "cacheId": "",
+      "uid": "",
+      "comment": "",
+      "dateFound": ""
+    }
+  },
+  "hiddenBy": {
+    "hiddenBy0": {
+      "uid": "",
+      "dateHidden": ""
+    }
+  }
+}
