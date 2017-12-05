@@ -5,28 +5,36 @@
       "state": "TN",
       "latitude": "36.170702",
       "longitude": "-86.787422",
-      "description": "It's not the kind of mall you think it is."
+      "description": "It's not the kind of mall you think it is.",
+      "hiddenBy": "",
+      "dateHidden": ""
     },
     "cache1": {
       "city": "Nashville",
       "state": "TN",
       "latitude": "36.089102",
       "longitude": "-86.740642",
-      "description": "Where the wild things are."
+      "description": "Where the wild things are.",
+      "hiddenBy": "",
+      "dateHidden": ""
     },
     "cache2": {
       "city": "Nashville",
       "state": "TN",
       "latitude": "36.128270",
       "longitude": "-86.678059",
-      "description": "It's international af"
+      "description": "It's international af",
+      "hiddenBy": "",
+      "dateHidden": ""
     },
     "cache3": {
       "city": "Nashville",
       "state": "TN",
       "latitude": "36.083472",
       "longitude": "-86.870167",
-      "description": "One of many golf courses."
+      "description": "One of many golf courses.",
+      "hiddenBy": "",
+      "dateHidden": ""
     }
   },
   "badges": {
@@ -53,12 +61,12 @@
       "uid": "",
       "comment": "",
       "dateFound": ""
-    }
-  },
-  "hiddenBy": {
-    "hiddenBy0": {
+    },
+    "foundBy1": {
+      "cacheId": "",
       "uid": "",
-      "dateHidden": ""
+      "comment": "",
+      "dateFound": ""
     }
   }
 }

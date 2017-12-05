@@ -1,4 +1,4 @@
-/* globals app: true */
+/* globals geoApp: true */
 'use strict';
 
-const app = angular.module("GeoCacheApp", ["ngAnimate", "ngRoute", "ngSanitize", "uiGmapgoogle-maps"]);
+const geoApp = angular.module("GeoCacheApp", ["ngAnimate", "ngRoute", "ngSanitize", "uiGmapgoogle-maps"]);
