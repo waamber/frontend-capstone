@@ -4,9 +4,9 @@ geoApp.controller("AuthCtrl", function ($location, $rootScope, $scope, AuthServi
 
   $scope.authenticate = () => {
     AuthService.authenticateGoogle().then((result) => {
-      $rootScope.uid = result.user.uid;
+      $rootScope.navbar = true;
       $scope.$apply(() => {
-        $location.url("/dashboard");
+        $location.path("/dashboard");
       });
     }).catch((err) => {
       console.log('Error in authenticate() in AuthCtrl', err);
