@@ -1,13 +1,19 @@
 'use strict';
 
-geoApp.controller("DashboardCtrl", function ($rootScope, $scope, AuthService, CacheService) {
+geoApp.controller("DashboardCtrl", function ($rootScope, $scope, $window, AuthService, CacheService) {
+
+  $window.navigator.geolocation.getCurrentPosition(function (position) {
+    $scope.map.center.latitude = position.coords.latitude;
+    $scope.map.center.longitude = position.coords.longitude;
+    $scope.$apply();
+  });
 
   $scope.caches = [];
 
   $scope.map = {
     center: {
-      latitude: 36.089142,
-      longitude: -86.740642
+      latitude: 36.170702,
+      longitude: -86.787422
     },
     zoom: 11
   };
