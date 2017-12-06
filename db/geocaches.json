@@ -35,6 +35,105 @@
       "description": "One of many golf courses.",
       "hiddenBy": "",
       "dateHidden": ""
+    },
+    "cache4": {
+      "city": "Murfreesboro",
+      "state": "TN",
+      "latitude": "35.840082",
+      "longitude": "-86.380005",
+      "description": "Home of MTSU.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache5": {
+      "city": "Franklin",
+      "state": "TN",
+      "latitude": "35.9024",
+      "longitude": "-86.87439",
+      "description": "Stashed in the corner next to the metal.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache6": {
+      "city": "Shelbyville",
+      "state": "TN",
+      "latitude": "35.482138",
+      "longitude": "-86.45618",
+      "description": "Possibly 'Fake' news.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache7": {
+      "city": "Chattanooga",
+      "state": "TN",
+      "latitude": "35.055856",
+      "longitude": "-85.311069",
+      "description": "Adopt a fish!",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache8": {
+      "city": "Knoxville",
+      "state": "TN",
+      "latitude": "35.95503",
+      "longitude": "-83.925033",
+      "description": "Good ole Rocky Top.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache9": {
+      "city": "Memphis",
+      "state": "TN",
+      "latitude": "35.042084",
+      "longitude": "-89.979401",
+      "description": "Memphis has an airport?",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache10": {
+      "city": "Paris",
+      "state": "TN",
+      "latitude": "36.292991",
+      "longitude": "-88.308105",
+      "description": "The only thing french about this place are the fries.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache11": {
+      "city": "Nashville",
+      "state": "TN",
+      "latitude": "36.491973",
+      "longitude": "-87.341309",
+      "description": "One melting pot of a town.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache12": {
+      "city": "Hendersonville",
+      "state": "TN",
+      "latitude": "36.290777",
+      "longitude": "-86.635437",
+      "description": "I think Taylor Swift grew up here?",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache13": {
+      "city": "Columbia",
+      "state": "TN",
+      "latitude": "35.599252",
+      "longitude": "87.044678",
+      "description": "The only white they're pushing here are the people.",
+      "hiddenBy": "",
+      "dateHidden": ""
+    },
+    "cache14": {
+      "city": "McMinnville",
+      "state": "TN",
+      "latitude": "35.677379",
+      "longitude": "-85.77301",
+      "description": "One of many golf courses.",
+      "hiddenBy": "",
+      "dateHidden": ""
     }
   },
   "badges": {
@@ -59,13 +158,25 @@
     "foundBy0": {
       "cacheId": "",
       "uid": "",
-      "comment": "",
+      "comment": "i found dis",
       "dateFound": ""
     },
     "foundBy1": {
       "cacheId": "",
       "uid": "",
-      "comment": "",
+      "comment": "this shit was hard af to find",
+      "dateFound": ""
+    },
+    "foundBy2": {
+      "cacheId": "",
+      "uid": "",
+      "comment": "i almost didn't find dis.",
+      "dateFound": ""
+    },
+    "foundBy3": {
+      "cacheId": "",
+      "uid": "",
+      "comment": "i found it, and i took it.",
       "dateFound": ""
     }
   }

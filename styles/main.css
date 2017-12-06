@@ -1,6 +1,6 @@
 .angular-google-map-container {
-  height: 680px;
-  width: 800px; }
+  height: 380px;
+  width: 500px; }
 
 .login-container {
   border: 2px solid black;
@@ -15,3 +15,26 @@
       padding: 0; }
     .login-container .login-btn-container .google-btn-img {
       height: 51px; }
+
+#dashboard-options {
+  border: 2px solid black;
+  height: 600px;
+  margin-left: 35px; }
+  #dashboard-options #dashboard-header {
+    margin-bottom: 70px; }
+  #dashboard-options #find-option {
+    border: 2px solid black;
+    margin-bottom: 50px; }
+    #dashboard-options #find-option .goToFindsBtn {
+      margin-top: 11px; }
+  #dashboard-options #hide-option {
+    border: 2px solid black;
+    margin-bottom: 50px; }
+    #dashboard-options #hide-option .goToHidesBtn {
+      margin-top: 11px; }
+
+#dashboard-map {
+  border: 2px solid black;
+  width: 537px;
+  margin-top: 108px;
+  margin-left: 100px; }

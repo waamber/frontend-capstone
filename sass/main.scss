@@ -1,7 +1,9 @@
 .angular-google-map-container { 
-  height: 680px;
-  width: 800px
+  height: 380px;
+  width: 500px
 }
+
+/////LOGIN PAGE//////
 
 .login-container {
   border: 2px solid black;
@@ -24,5 +26,42 @@
     height: 51px;
    }
   } 
+}
 
+/////DASHBOARD PAGE/////
+
+#dashboard-options {
+  border: 2px solid black;
+  height: 600px;
+  margin-left: 35px;
+
+  #dashboard-header {
+    margin-bottom: 70px;
+  }
+
+  #find-option {
+    border: 2px solid black;
+    margin-bottom: 50px;
+
+    .goToFindsBtn {
+      margin-top: 11px;
+    }
+  }
+
+  #hide-option {
+    border: 2px solid black;
+    margin-bottom: 50px;
+
+    .goToHidesBtn {
+      margin-top: 11px;
+    }
+
+  }
+}
+
+#dashboard-map {
+  border: 2px solid black;
+  width: 537px;
+  margin-top: 108px;
+  margin-left: 100px;
 }

@@ -2,4 +2,6 @@
 
 geoApp.controller("FindDetailCtrl", function () {
 
+
+
 });

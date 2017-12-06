@@ -14,17 +14,49 @@
     <ng-map center="41,-87" zoom="3"></ng-map>
   </div>
 
-  <div id="map_canvas" ng-controller="DashboardCtrl">
-    <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
-      <ui-gmap-markers models="caches" coords="'self'" icon="'icon'">
-        <ui-gmap-windows show="show">
-          <div ng-non-bindable class="text-center">{{description}}
-            <div><button type="button" class="btn btn-warning btn-xs">Danger</button></div>
-          </div>
-        </ui-gmap-windows>
-      </ui-gmap-markers>
-    </ui-gmap-google-map>
+  <div id="dashboard-page" class="col-xs-12">
+
+    <div id="dashboard-options" class="col-xs-6">
+
+      <div id='dashboard-header'>
+        <h1>Browse Caches</h1>
+      </div>
+      <div id="find-option" class="row">
+        <h1 class="col-xs-6">Your Finds</h1>
+        <button type="button" class="btn btn-default btn-lg goToFindsBtn" ng-click="goToFinds()">GO!</button>
+      </div>
+      <div id="hide-option" class="row">
+        <h1 class="col-xs-6">Your Hides</h1>
+        <button type="button" class="btn btn-default btn-lg goToHidesBtn" ng-click="goToHides()">GO!</button>
+      </div>
+      <div id="badge-option">
+        <h1>Badges</h1>
+        <div>
+          Badge Icons go Here!
+        </div>
+      </div>
+    </div>
+
+
+    <div id="dashboard-map" class="col-xs-6">
+      <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
+          <ui-gmap-markers models="caches" coords="'self'" icon="'icon'">
+            <ui-gmap-windows show="show">
+              <div ng-non-bindable class="text-center">{{description}}
+                <div><button type="button" class="btn btn-warning btn-xs" ng-click="goToDetails(id)">Details</button></div>
+              </div>
+            </ui-gmap-windows>
+          </ui-gmap-markers>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+
   </div>
+
+
+
+
 
 </body>
 
