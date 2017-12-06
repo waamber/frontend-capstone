@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("DashboardCtrl", function ($rootScope, $scope, $window, AuthService, CacheService) {
+geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $window, AuthService, CacheService) {
 
   $window.navigator.geolocation.getCurrentPosition(function (position) {
     $scope.map.center.latitude = position.coords.latitude;
@@ -33,4 +33,17 @@ geoApp.controller("DashboardCtrl", function ($rootScope, $scope, $window, AuthSe
   };
 
   caches();
+
+  $scope.goToFinds = () => {
+    $location.path('/find');
+  };
+
+  $scope.goToHides = () => {
+    $location.path('/hide');
+  };
+
+  $scope.goToDetails = (cacheId) => {
+    $location.path(`/cache/detail/${cacheId}`);
+  };
+
 });

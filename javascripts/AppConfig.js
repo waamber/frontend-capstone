@@ -48,7 +48,7 @@ geoApp.config(function ($routeProvider, GOOGLEMAPS_CONFIG, uiGmapGoogleMapApiPro
       controller: 'DashboardCtrl',
       resolve: { isAuth }
     })
-    .when("/cache", {
+    .when("/cache/detail/:id", {
       templateUrl: 'partials/cache_detail.html',
       controller: 'CacheDetailCtrl',
       resolve: { isAuth }
