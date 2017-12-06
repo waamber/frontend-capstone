@@ -37,20 +37,44 @@
       </div>
     </div>
 
-
-    <div id="dashboard-map" class="col-xs-6">
+    <!--use ng-repeat and take out non-bindable-->
+    <!--<div id="dashboard-map" class="col-xs-6">
       <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
         <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
           <ui-gmap-markers models="caches" coords="'self'" icon="'icon'">
-            <ui-gmap-windows show="show">
-              <div ng-non-bindable class="text-center">{{description}}
-                <div><button type="button" class="btn btn-warning btn-xs" ng-click="goToDetails(id)">Details</button></div>
+            <ui-gmap-windows show="show" templateParameter="windowParams">
+              <div ng-non-bindable class="text-center">
+                {{name}}
+                <div>
+                  <button type="button" class="btn btn-warning btn-xs" href="/cache/detail/{{id}}">Details</button>
+                </div>
               </div>
             </ui-gmap-windows>
           </ui-gmap-markers>
         </ui-gmap-google-map>
       </div>
+    </div>-->
+
+    <div id="dashboard-map" class="col-xs-6">
+      <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
+          <ui-gmap-marker ng-repeat="cache in caches" coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="cache.id">
+            <ui-gmap-window show="show">
+              <div class="text-center">
+                {{cache.name}}
+                <div>
+                  <a class="location" href="#!/cache/detail/{{cache.id}}">Details</a>
+                  <!--<button type="button" class="btn btn-warning btn-xs" ng-click="$root.goToDetails(cache.id)">Details</button>-->
+                </div>
+              </div>
+
+            </ui-gmap-window>
+          </ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+
     </div>
+
 
   </div>
 

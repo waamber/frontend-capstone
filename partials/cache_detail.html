@@ -1,0 +1,32 @@
+<div id="cache-detail-page">
+
+  <div id="cache-detail-header" class="col-xs-6">
+    <h4 ng-non-bindable>{{name}}</h4>
+  </div>
+
+  <div class="cache-details-container">
+
+    <div id="cache-details" class="col-xs-6">
+      <h2 ng-non-bindable>Location: {{cache.city}}, {{cache.state}}</h2>
+      <h2>Coordinates:</h2>
+      <p ng-non-bindable>Latitude: {{cache.latitude}}</p>
+      <p ng-non-bindable>Longitude: {{cache.longitude}}</p>
+      <h2>Description:</h2>
+      <png-non-bindable>{{cache.description}}</p>
+        <div>
+          <button type="button" class="btn btn-default" ng-click="foundIt()">Found It!</button>
+        </div>
+    </div>
+
+    <div id="detail-map" class="col-xs-6">
+      <div id="map_canvas" ng-controller="CacheDetailCtrl" class="dashboard-map">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
+          <ui-gmap-markers models="caches" coords="'self'" icon="'icon'">
+          </ui-gmap-markers>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+
+  </div>
+
+</div>

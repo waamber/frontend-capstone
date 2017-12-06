@@ -18,5 +18,9 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG)
     });
   };
 
-  return { getCaches };
+  const getSingleCache = (cacheId) => {
+    return $http.get(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
+  };
+
+  return { getCaches, getSingleCache };
 });
