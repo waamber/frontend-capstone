@@ -1,0 +1,22 @@
+<div id="my-finds-page">
+
+  <div class="finds-heading col-xs-12 row">
+    <div class="finds-header col-xs-9">
+      <h1>My Finds</h1>
+    </div>
+
+    <div class="finds-search col-xs-3 input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div>
+
+    <div class="finds-list col-xs-6" ng-repeat="finds in foundByMe">
+      {{finds.name}}
+
+    </div>
+
+  </div>
+
+</div>

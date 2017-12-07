@@ -3,24 +3,34 @@
 geoApp.controller("CacheDetailCtrl", function ($routeParams, $scope, CacheService) {
 
   $scope.cache = {};
+  $scope.map = {};
 
-  // $scope.map = {
-  //   center: {
-  //     latitude: 36.170702,
-  //     longitude: -86.787422
-  //   },
-  //   zoom: 11
-  // };
+  $scope.map = {
+    center: {
+      latitude: "",
+      longitude: ""
+    },
+    zoom: 15
+  };
 
   const getCache = () => {
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
-      console.log($scope.cache);
+      $scope.map = {
+        center: {
+          latitude: results.data.latitude,
+          longitude: results.data.longitude
+        }
+      };
     }).catch((error) => {
       console.log("Error in getSingleCache in CacheDetailCtrl", error);
     });
   };
 
   getCache();
+
+  $scope.foundIt = () => {
+    
+  };
 
 });

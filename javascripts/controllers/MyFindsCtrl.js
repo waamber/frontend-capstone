@@ -2,15 +2,19 @@
 
 geoApp.controller("MyFindsCtrl", function ($scope, AuthService, FoundByService) {
 
-  const found = () => {
-    FoundByService.getFoundBy(AuthService.getCurrentUid()).then((results) => {
-      $scope.foundBy = results;
-      console.log($scope.foundBy);
+  $scope.foundByMe = [];
+
+  const uid = AuthService.getCurrentUid();
+
+  const getFinds = () => {
+    FoundByService.getMyFinds(uid).then((results) => {
+      $scope.foundByMe = results;
+      console.log($scope.foundByMe);
     }).catch((error) => {
-      console.log("Error in caches", error);
+      console.log("Error in getFinds", error);
     });
   };
 
-  found();
+  getFinds();
 
 });

@@ -10,9 +10,6 @@
 </head>
 
 <body>
-  <div map-lazy-load="https://maps.google.com/maps/api/js">
-    <ng-map center="41,-87" zoom="3"></ng-map>
-  </div>
 
   <div id="dashboard-page" class="col-xs-12">
 
@@ -36,24 +33,6 @@
         </div>
       </div>
     </div>
-
-    <!--use ng-repeat and take out non-bindable-->
-    <!--<div id="dashboard-map" class="col-xs-6">
-      <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
-        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
-          <ui-gmap-markers models="caches" coords="'self'" icon="'icon'">
-            <ui-gmap-windows show="show" templateParameter="windowParams">
-              <div ng-non-bindable class="text-center">
-                {{name}}
-                <div>
-                  <button type="button" class="btn btn-warning btn-xs" href="/cache/detail/{{id}}">Details</button>
-                </div>
-              </div>
-            </ui-gmap-windows>
-          </ui-gmap-markers>
-        </ui-gmap-google-map>
-      </div>
-    </div>-->
 
     <div id="dashboard-map" class="col-xs-6">
       <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
