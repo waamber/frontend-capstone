@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.service("CacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG) {
+geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIREBASE_CONFIG) {
 
   const getCaches = () => {
     let caches = [];
@@ -18,5 +18,24 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, FIREBASE_CONFIG)
     });
   };
 
-  return { getCaches };
+
+  const getSingleCache = (cacheId) => {
+    return $http.get(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
+  };
+
+  const createNewFoundBy = (found) => {
+    return {
+      "cacheId": found.id,
+      "comment": "",
+      "uid": AuthService.getCurrentUid()
+    };
+  };
+
+  const postNewFoundBy = (newFind) => {
+    const find = createNewFoundBy(newFind);
+    return $http.post(`${FIREBASE_CONFIG.databaseURL}/foundBy.json`, JSON.stringify(find));
+  };
+
+
+  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy };
 });

@@ -1,0 +1,64 @@
+<div id="new-hide-page">
+
+  <div id="new-hide-header" class="col-xs-6">
+    <h4>Let's Hide Something!</h4>
+  </div>
+
+  <div class="new-hide-container col-xs-12">
+
+    <div id="hide-form" class="col-xs-6">
+
+      <form name="newHideForm">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="cacheDate">Date</label>
+            <input type="date" class="form-control" id="cacheDateInput" ng-model="hide.dateHidden" ng-required="true">
+          </div>
+          <label for="cacheName">Cache Name</label>
+          <input type="name" class="form-control" id="cacheNameInput" ng-model="hide.name" ng-required="true">
+        </div>
+        <h4>Location:</h4>
+        <div class="form-group">
+          <label for="cacheCity">City</label>
+          <input type="name" class="form-control" id="cacheCityInput" ng-model="hide.city" ng-required="true">
+        </div>
+        <div class="form-group">
+          <label for="cacheCity">State</label>
+          <input type="name" class="form-control" id="cacheStateInput" ng-model="hide.state" ng-required="true">
+        </div>
+        <h4>Coordinates:</h4>
+        <div class="form-group">
+          <label for="cacheLatitude">Latitude</label>
+          <input type="number" class="form-control" id="cacheLatitudeInput" ng-model="hide.latitude" ng-required="true">
+        </div>
+        <div class="form-group">
+          <label for="cacheLongitude">Longitude</label>
+          <input type="number" class="form-control" id="cacheLongitudeInput" ng-model="hide.longitude" ng-required="true">
+        </div>
+        <div class="form-group">
+          <label for="cacheDescription">Description/Hint</label>
+          <input type="text" class="form-control" id="cacheDescriptionInput" ng-model="hide.description" ng-required="true">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="hideIt()" ng-disabled="newHideForm.$invalid">Hide It!</button>
+      </form>
+
+    </div>
+  </div>
+
+  <div id="detail-map" class="col-xs-6">
+    <div id="map_canvas" class="dashboard-map">
+      <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
+        <ui-gmap-marker coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="0">
+          <ui-gmap-window show="show">
+            <div class="text-center">
+              {{cache.name}}
+            </div>
+          </ui-gmap-window>
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+    </div>
+  </div>
+
+</div>
+
+</div>

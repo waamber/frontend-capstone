@@ -26,7 +26,6 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
   const caches = () => {
     CacheService.getCaches(AuthService.getCurrentUid()).then((results) => {
       $scope.caches = results;
-      console.log($scope.caches);
     }).catch((error) => {
       console.log("Error in caches", error);
     });
@@ -40,10 +39,6 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
 
   $scope.goToHides = () => {
     $location.path('/hide');
-  };
-
-  $scope.goToDetails = (cacheId) => {
-    $location.path(`/cache/detail/${cacheId}`);
   };
 
 });

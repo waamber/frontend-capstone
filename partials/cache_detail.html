@@ -1,0 +1,38 @@
+<div id="cache-detail-page">
+
+  <div id="cache-detail-header" class="col-xs-6">
+    <h4>{{cache.name}}</h4>
+  </div>
+
+  <div class="cache-details-container col-xs-12">
+
+    <div id="cache-details" class="col-xs-6">
+      <p>Date: {{date | date:'MM-dd-yyyy'}}</p>
+      <h2>Location: {{cache.city}}, {{cache.state}}</h2>
+      <h2>Coordinates:</h2>
+      <p>Latitude: {{cache.latitude}}</p>
+      <p>Longitude: {{cache.longitude}}</p>
+      <h2>Description:</h2>
+      <p>{{cache.description}}</p>
+      <div>
+        <button type="button" class="btn btn-default" ng-click="foundIt(cache.id)">Found It!</button>
+      </div>
+    </div>
+
+    <div id="detail-map" class="col-xs-6">
+      <div id="map_canvas" class="dashboard-map">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
+          <ui-gmap-marker coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="0">
+            <ui-gmap-window show="show">
+              <div class="text-center">
+                {{cache.name}}
+              </div>
+            </ui-gmap-window>
+          </ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+
+  </div>
+
+</div>
