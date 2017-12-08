@@ -20,9 +20,5 @@ geoApp.service("FindService", function ($http, $q, $scope, AuthService, FIREBASE
     });
   };
 
-
-
-
-
   return { getFoundBy };
 });
