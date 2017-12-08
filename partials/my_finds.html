@@ -4,7 +4,6 @@
     <div class="finds-header col-xs-9">
       <h1>My Finds</h1>
     </div>
-
     <div class="finds-search col-xs-3 input-group">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">Go!</button>
@@ -12,11 +11,16 @@
       <input type="text" class="form-control" placeholder="Search for...">
     </div>
 
-    <div class="finds-list col-xs-6" ng-repeat="finds in foundByMe">
-      {{finds.name}}
-
+    <div class="finds-list col-xs-12" ng-repeat="finds in foundByMe">
+      <div class="col-xs-6 col-xs-offset-3 finds-cards">
+        <div class="find-card-name col-xs-9">
+          {{finds.name}}
+        </div>
+        <div class="col-xs-3 find-card-btn">
+          <button type="button" class="btn btn-default" ng-click="goToFindsDetail(finds.cacheId)">Details</button>
+        </div>
+      </div>
     </div>
-
   </div>
 
 </div>

@@ -1,7 +1,7 @@
 'use strict';
 
-geoApp.controller("CacheDetailCtrl", function ($routeParams, $scope, CacheService) {
-
+geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, CacheService) {
+  $scope.date = new Date();
   $scope.cache = {};
   $scope.map = {};
 
@@ -14,13 +14,15 @@ geoApp.controller("CacheDetailCtrl", function ($routeParams, $scope, CacheServic
   };
 
   const getCache = () => {
+
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
       $scope.map = {
         center: {
-          latitude: results.data.latitude,
-          longitude: results.data.longitude
-        }
+          latitude: $scope.cache.latitude,
+          longitude: $scope.cache.longitude
+        },
+        zoom: 15
       };
     }).catch((error) => {
       console.log("Error in getSingleCache in CacheDetailCtrl", error);
@@ -29,8 +31,14 @@ geoApp.controller("CacheDetailCtrl", function ($routeParams, $scope, CacheServic
 
   getCache();
 
-  $scope.foundIt = () => {
-    
+  $scope.foundIt = (cacheId) => {
+    console.log(cacheId);
+    CacheService.postNewFoundBy(cacheId).then(() => {
+      $location.path('/finds');
+      console.log(cacheId);
+    }).catch((error) => {
+      console.log("Error in hideIt", error);
+    });
   };
 
 });

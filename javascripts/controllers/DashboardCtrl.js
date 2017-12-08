@@ -41,9 +41,4 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     $location.path('/hide');
   };
 
-  $scope.goToDetails = (cacheId) => {
-    console.log(cacheId);
-    // $location.path(`/cache/detail/${cacheId}`);
-  };
-
 });

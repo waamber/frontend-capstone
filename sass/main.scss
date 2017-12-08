@@ -66,8 +66,57 @@
   margin-left: 100px;
 }
 
-/////CACHE DETAIL/////
+/////CACHE DETAIL PAGE/////
 
 #cache-detail-header {
   border: 2px solid black;
+}
+
+
+/////MY FINDS PAGE/////
+
+.finds-list {
+  margin-top: 30px;
+
+  .finds-cards {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  height: 75px;
+
+  .find-card-name {
+    padding: 17px;
+  }
+
+  .find-card-btn {
+    padding: 9px;
+  }
+}
+}
+
+/////FINDS DETAIL PAGE/////
+
+
+
+
+
+/////MY HIDES PAGE////
+
+.hides-list {
+  margin-top: 30px;
+
+  .hides-cards {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  height: 75px;
+
+  .hides-card-name {
+    padding: 17px;
+  }
+
+  .hides-card-btn {
+    padding: 9px;
+  }
+}
 }

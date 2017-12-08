@@ -41,3 +41,27 @@
 
 #cache-detail-header {
   border: 2px solid black; }
+
+.finds-list {
+  margin-top: 30px; }
+  .finds-list .finds-cards {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    height: 75px; }
+    .finds-list .finds-cards .find-card-name {
+      padding: 17px; }
+    .finds-list .finds-cards .find-card-btn {
+      padding: 9px; }
+
+.hides-list {
+  margin-top: 30px; }
+  .hides-list .hides-cards {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    height: 75px; }
+    .hides-list .hides-cards .hides-card-name {
+      padding: 17px; }
+    .hides-list .hides-cards .hides-card-btn {
+      padding: 9px; }
