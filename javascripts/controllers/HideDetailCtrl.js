@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("HideDetailCtrl", function ($routeParams, $scope, CacheService) {
+geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, CacheService, HiddenByService) {
 
   $scope.date = new Date();
   $scope.cache = {};
@@ -25,11 +25,21 @@ geoApp.controller("HideDetailCtrl", function ($routeParams, $scope, CacheService
         },
         zoom: 15
       };
+      $scope.cache.id = $routeParams.id;
+
     }).catch((error) => {
       console.log("Error in getSingleCache in HideDetailCtrl", error);
     });
   };
 
   getCache();
+
+  $scope.deleteHide = (cacheId) => {
+    HiddenByService.deleteMyHide(cacheId).then((result) => {
+      $location.path('/hide');
+    }).catch((error) => {
+      console.log("Error in deleteHide", error);
+    });
+  };
 
 });

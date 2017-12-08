@@ -18,4 +18,8 @@ geoApp.controller("MyHidesCtrl", function ($location, $http, $q, $scope, FIREBAS
     $location.path(`/hide/detail/${cacheId}`);
   };
 
+  $scope.goToNewHide = () => {
+    $location.path('/newhide');
+  };
+
 });
