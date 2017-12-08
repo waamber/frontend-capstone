@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("MyHidesCtrl", function ($q, $http, $scope, FIREBASE_CONFIG, HiddenByService) {
+geoApp.controller("MyHidesCtrl", function ($location, $http, $q, $scope, FIREBASE_CONFIG, HiddenByService) {
 
   $scope.hiddenByMe = [];
 
@@ -13,5 +13,9 @@ geoApp.controller("MyHidesCtrl", function ($q, $http, $scope, FIREBASE_CONFIG, H
   };
 
   getHides();
+
+  $scope.goToHidesDetail = (cacheId) => {
+    $location.path(`/hide/detail/${cacheId}`);
+  };
 
 });

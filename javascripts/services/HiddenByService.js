@@ -23,5 +23,8 @@ geoApp.service("HiddenByService", function ($http, $q, AuthService, FIREBASE_CON
 
   getAllHidden();
 
+  const deleteMyHide = () => {
+
+  };
   return { getAllHidden };
 });
