@@ -18,13 +18,9 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     });
   };
 
-
   const getSingleCache = (cacheId) => {
     return $http.get(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
   };
-
-
-
 
   const createNewFoundBy = (found) => {
     return {
@@ -39,6 +35,23 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     return $http.post(`${FIREBASE_CONFIG.databaseURL}/foundBy.json`, JSON.stringify(find));
   };
 
+  const createNewCache = (cache) => {
+    return {
+      "city": cache.city,
+      "dateHidden": cache.dateHidden,
+      "description": cache.description,
+      "hiddenBy": cache.hiddenBy,
+      "latitude": cache.latitude,
+      "longitude": cache.longitude,
+      "name": cache.name,
+      "state": cache.state
+    };
+  };
 
-  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy };
+  const updateCache = (cache, cacheId) => {
+    return $http.put(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`, JSON.stringify(cache));
+  };
+
+
+  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache };
 });
