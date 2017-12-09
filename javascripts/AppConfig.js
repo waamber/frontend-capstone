@@ -63,6 +63,11 @@ geoApp.config(function ($routeProvider, GOOGLEMAPS_CONFIG, uiGmapGoogleMapApiPro
       controller: 'FindDetailCtrl',
       resolve: { isAuth }
     })
+    .when("/editfind/:id", {
+      templateUrl: 'partials/edit_find.html',
+      controller: 'EditFindCtrl',
+      resolve: { isAuth }
+    })
     .when("/hide", {
       templateUrl: 'partials/my_hides.html',
       controller: 'MyHidesCtrl',

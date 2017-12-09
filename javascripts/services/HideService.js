@@ -7,10 +7,12 @@ geoApp.service("HideService", function ($http, $q, $rootScope, FIREBASE_CONFIG) 
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/caches.json`).then((results) => {
         let fbCaches = results.data;
-        Object.keys(fbCaches).forEach((key) => {
-          fbCaches[key].id = key;
-          caches.push(fbCaches[key]);
-        });
+        if (fbCaches) {
+          Object.keys(fbCaches).forEach((key) => {
+            fbCaches[key].id = key;
+            caches.push(fbCaches[key]);
+          });
+        }
         resolve(caches);
       }).catch((error) => {
         reject(error);
