@@ -8,6 +8,7 @@ geoApp.controller("MyFindsCtrl", function ($location, $routeParams, $scope, Auth
   const getFinds = () => {
     FoundByService.getMyFinds(uid).then((results) => {
       $scope.foundByMe = results;
+      console.log($scope.foundByMe);
     }).catch((error) => {
       console.log("Error in getFinds", error);
     });

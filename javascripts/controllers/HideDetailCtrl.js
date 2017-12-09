@@ -43,7 +43,7 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
   };
 
   $scope.editHide = (cacheId) => {
-    $location.path(`/edithide/${contactId}`);
-  }
+    $location.path(`/edithide/${cacheId}`);
+  };
 
 });
