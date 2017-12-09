@@ -23,8 +23,10 @@ geoApp.service("HiddenByService", function ($http, $q, AuthService, FIREBASE_CON
 
   getAllHidden();
 
-  const deleteMyHide = () => {
 
+  const deleteMyHide = (cacheId) => {
+    return $http.delete(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
   };
-  return { getAllHidden };
+
+  return { getAllHidden, deleteMyHide };
 });

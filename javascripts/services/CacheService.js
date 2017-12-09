@@ -23,6 +23,9 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     return $http.get(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
   };
 
+
+
+
   const createNewFoundBy = (found) => {
     return {
       "cacheId": found.id,
