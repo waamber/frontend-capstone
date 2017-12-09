@@ -1,12 +1,12 @@
-<div id="find-detail-page">
+<div id="edit-find-page">
 
-  <div id="find-detail-header" class="col-xs-6">
+  <div id="edit-find-header" class="col-xs-6">
     <h4>{{cache.name}}</h4>
   </div>
 
-  <div class="find-details-container col-xs-12">
+  <div class="edit-find-container col-xs-12">
 
-    <div id="find-details" class="col-xs-6">
+    <div id="edit-find-details" class="col-xs-6">
       <p>Date Found: {{cache.dateFound}}</p>
       <h2>Location: {{cache.city}}, {{cache.state}}</h2>
       <h2>Coordinates:</h2>
@@ -14,12 +14,13 @@
       <p>Longitude: {{cache.longitude}}</p>
       <h2>Description:</h2>
       <p>{{cache.description}}</p>
-      <h2>Comments:</h2>
-      <p>{{cache.comment}}</p>
-      <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-danger" ng-click="deleteCache(cache.id)">Delete</button>
-        <button type="button" class="btn btn-default" ng-click="addComment(cache)">Add Comment</button>
-      </div>
+      <form name="editFoundCache">
+        <div class="form-group">
+          <label for="cacheComment">Leave A Comment:</label>
+          <input type="name" class="form-control" id="cacheCommentInput" ng-model="cache.comment">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block " ng-click="submitComment(cache)">Submit Changes</button>
+      </form>
     </div>
 
     <div id="find-detail-map" class="col-xs-6">

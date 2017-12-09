@@ -2,15 +2,19 @@
 
 geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIREBASE_CONFIG) {
 
+  const uid = AuthService.getCurrentUid();
+
   const getCaches = () => {
     let caches = [];
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/caches.json`).then((results) => {
         let fbCaches = results.data;
-        Object.keys(fbCaches).forEach((key) => {
-          fbCaches[key].id = key;
-          caches.push(fbCaches[key]);
-        });
+        if (fbCaches) {
+          Object.keys(fbCaches).forEach((key) => {
+            fbCaches[key].id = key;
+            caches.push(fbCaches[key]);
+          });
+        }
         resolve(caches);
       }).catch((error) => {
         reject(error);
@@ -23,15 +27,16 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
   };
 
   const createNewFoundBy = (found) => {
+    let date = new Date();
     return {
       "cacheId": found.id,
-      "comment": "",
+      "comment": found.comment,
+      "dateFound": date,
       "uid": AuthService.getCurrentUid()
     };
   };
 
-  const postNewFoundBy = (newFind) => {
-    const find = createNewFoundBy(newFind);
+  const postNewFoundBy = (find) => {
     return $http.post(`${FIREBASE_CONFIG.databaseURL}/foundBy.json`, JSON.stringify(find));
   };
 
@@ -48,10 +53,31 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     };
   };
 
+  const updateFind = (cache, cacheId) => {
+    return $http.put(`${FIREBASE_CONFIG.databaseURL}/foundBy/${cacheId}.json`, JSON.stringify(cache));
+  };
+
   const updateCache = (cache, cacheId) => {
     return $http.put(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`, JSON.stringify(cache));
   };
 
+  const getSingleFound = (cacheId) => {
+    return $q((resolve, reject) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/foundBy.json?orderBy="cacheId"&equalTo="${cacheId}"`).then((results) => {
+        let foundCache = results.data;
+        if (foundCache) {
+          Object.keys(foundCache).forEach((key) => {
+            foundCache[key].id = key;
+            if (foundCache[key].uid === uid) {
+              resolve(foundCache[key]);
+            }
+          });
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
+    });
+  };
 
-  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache };
+  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache, getSingleFound, updateFind };
 });

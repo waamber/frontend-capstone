@@ -7,7 +7,6 @@ geoApp.controller("EditHideCtrl", function ($location, $routeParams, $scope, Cac
   const getCache = () => {
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
-      console.log($scope.cache);
     }).catch((error) => {
       console.log(error);
     });
@@ -24,6 +23,5 @@ geoApp.controller("EditHideCtrl", function ($location, $routeParams, $scope, Cac
       console.log("Error in editSubmit", error);
     });
   };
-
 
 });
