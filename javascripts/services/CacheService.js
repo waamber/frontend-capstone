@@ -61,6 +61,23 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     return $http.put(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`, JSON.stringify(cache));
   };
 
+  const getSingleFoundByOthers = (cacheId) => {
+    return $q((resolve, reject) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/foundBy.json?orderBy="cacheId"&equalTo="${cacheId}"`).then((results) => {
+        let foundCache = results.data;
+        if (foundCache) {
+          Object.keys(foundCache).forEach((key) => {
+            foundCache[key].id = key;
+            resolve(foundCache[key]);
+          });
+        }
+      }).catch((error) => {
+        console.log(error);
+      });
+    });
+  };
+
+
   const getSingleFound = (cacheId) => {
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/foundBy.json?orderBy="cacheId"&equalTo="${cacheId}"`).then((results) => {
@@ -86,5 +103,5 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     });
   };
 
-  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache, getSingleFound, updateFind, getSingleCacheEdit };
+  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache, getSingleFound, updateFind, getSingleCacheEdit, getSingleFoundByOthers };
 });
