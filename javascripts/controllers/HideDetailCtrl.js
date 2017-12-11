@@ -33,11 +33,12 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
 
   getCache();
 
-  $scope.deleteHide = (cacheId) => {
-    CacheService.getSingleFound(cacheId).then((results) => {
+  $scope.deleteHide = (cache) => {
+    CacheService.getSingleFoundByOthers(cache.id).then((results) => {
       HiddenByService.deleteFoundBy(results.id);
       HiddenByService.deleteMyHide(results.cacheId);
       $location.path('/hide');
+      //on "/hide" reload, must reload page again to see changes
     }).catch((error) => {
       console.log(error);
     });

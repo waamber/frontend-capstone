@@ -24,4 +24,8 @@ geoApp.controller("EditHideCtrl", function ($location, $routeParams, $scope, Cac
     });
   };
 
+  // $scope.deleteHide = (cache) => {
+  //   console.log('ah');
+  // };
+
 });
