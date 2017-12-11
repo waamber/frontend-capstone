@@ -15,7 +15,6 @@ geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, 
   };
 
   const getCache = () => {
-
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
       $scope.map = {
@@ -33,7 +32,7 @@ geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, 
   getCache();
 
   $scope.foundIt = (cache) => {
-    $scope.cache.id = $routeParams.id;
+    $scope.cache.cacheId = $routeParams.id;
     let newFoundBy = CacheService.createNewFoundBy($scope.cache);
     CacheService.postNewFoundBy(newFoundBy).then(() => {
       $location.path('/find');

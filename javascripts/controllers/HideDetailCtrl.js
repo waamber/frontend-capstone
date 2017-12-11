@@ -16,7 +16,6 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
 
   const getCache = () => {
     CacheService.getSingleCache($routeParams.id).then((results) => {
-
       $scope.cache = results.data;
       $scope.map = {
         center: {
@@ -35,10 +34,12 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
   getCache();
 
   $scope.deleteHide = (cacheId) => {
-    HiddenByService.deleteMyHide(cacheId).then((result) => {
+    CacheService.getSingleFound(cacheId).then((results) => {
+      HiddenByService.deleteFoundBy(results.id);
+      HiddenByService.deleteMyHide(results.cacheId);
       $location.path('/hide');
     }).catch((error) => {
-      console.log("Error in deleteHide", error);
+      console.log(error);
     });
   };
 

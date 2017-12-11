@@ -7,7 +7,6 @@ geoApp.controller("NewHideCtrl", function ($location, $scope, AuthService, HideS
     $scope.hide.hiddenBy = AuthService.getCurrentUid();
     HideService.postNewCache(newCache).then(() => {
       $location.path('/hides');
-      console.log(newCache);
     }).catch((error) => {
       console.log("Error in hideIt", error);
     });

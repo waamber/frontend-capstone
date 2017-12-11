@@ -15,11 +15,9 @@ geoApp.service("FoundByService", function ($http, $q, FIREBASE_CONFIG, AuthServi
           let finishCount = fbFindsArray.length;
           fbFindsArray.forEach((key) => {
             fbFinds[key].id = key;
-            console.log(`${FIREBASE_CONFIG.databaseURL}/caches/${fbFinds[key].cacheId}.json`);
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/caches/${fbFinds[key].cacheId}.json`).then((results) => {
+            const url = `${FIREBASE_CONFIG.databaseURL}/caches/${fbFinds[key].cacheId}.json`;
+            $http.get(url).then((results) => {
               let findCacheData = results.data;
-              fbFinds[key].id = fbFinds[key].cacheId;
-              // console.log(results);
               fbFinds[key].city = findCacheData.city;
               fbFinds[key].state = findCacheData.state;
               fbFinds[key].dateHidden = findCacheData.dateHidden;
@@ -29,7 +27,6 @@ geoApp.service("FoundByService", function ($http, $q, FIREBASE_CONFIG, AuthServi
               fbFinds[key].name = findCacheData.name;
               myFinds.push(fbFinds[key]);
               count++;
-              console.log(count, finishCount);
               if ((finishCount - 1) === count) {
                 resolve(myFinds);
               }
@@ -38,7 +35,6 @@ geoApp.service("FoundByService", function ($http, $q, FIREBASE_CONFIG, AuthServi
             });
           });
         }
-
       });
     });
   };
@@ -54,7 +50,6 @@ geoApp.service("FoundByService", function ($http, $q, FIREBASE_CONFIG, AuthServi
           return cache;
         });
         resolve(cache);
-        console.log(caches);
       }).catch((error) => {
         console.log(error);
       });

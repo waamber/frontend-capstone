@@ -19,7 +19,6 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
   };
 
   $scope.onClick = function (markers, eventName, model) {
-    console.log(model.coords);
     model.show = !model.show;
   };
 
