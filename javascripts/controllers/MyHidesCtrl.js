@@ -22,4 +22,6 @@ geoApp.controller("MyHidesCtrl", function ($location, $http, $q, $scope, FIREBAS
     $location.path('/newhide');
   };
 
+
+  return { getHides };
 });

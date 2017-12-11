@@ -15,28 +15,26 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
   };
 
   const getCache = () => {
-    CacheService.getSingleCache($routeParams.id).then((results) => {
-      $scope.cache = results.data;
-      console.log($scope.cache);
-      $scope.cache.id = $routeParams.id;
-      $scope.map = {
-        center: {
-          latitude: $scope.cache.latitude,
-          longitude: $scope.cache.longitude
-        },
-        zoom: 15
-      };
-    }).catch((error) => {
-      console.log(error);
-    });
-  };
 
-  getCache();
-
-  $scope.deleteCache = (cacheId) => {
-    CacheService.getSingleFound(cacheId).then((results) => {
-      FoundByService.deleteMyFind(results.id).then(() => {
-        $location.path('/find');
+    CacheService.getSingleFound($routeParams.id).then((results) => {
+      $scope.cache = results;
+      CacheService.getSingleCache($scope.cache.cacheId).then((results) => {
+        let cache = results.data;
+        $scope.cache.latitude = cache.latitude;
+        $scope.cache.longitude = cache.longitude;
+        $scope.cache.city = cache.city;
+        $scope.cache.state = cache.city;
+        $scope.cache.description = cache.description;
+        $scope.cache.name = cache.name;
+        $scope.cache.hiddenBy = cache.hiddenBy;
+        $scope.cache.hiddenDate = cache.hiddenDate;
+        $scope.map = {
+          center: {
+            latitude: $scope.cache.latitude,
+            longitude: $scope.cache.longitude
+          },
+          zoom: 15
+        };
       }).catch((error) => {
         console.log(error);
       });
@@ -45,8 +43,18 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
     });
   };
 
+  getCache();
+
+  $scope.deleteCache = (cache) => {
+    FoundByService.deleteMyFind(cache.id).then((results) => {
+      $location.path('/find');
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+
   $scope.addComment = (cache) => {
-    $location.path(`/editfind/${cache.id}`);
+    $location.path(`/editfind/${cache.cacheId}`);
   };
 
 });

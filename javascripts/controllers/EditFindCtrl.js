@@ -1,12 +1,14 @@
 'use strict';
 
-geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, CacheService) {
+geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, AuthService, CacheService, FoundByService) {
 
+  const uid = AuthService.getCurrentUid();
 
   const getCache = () => {
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
-      $scope.cache.id = $routeParams.id;
+      $scope.cache.cacheId = $routeParams.id;
+      $scope.cache.id = results.data.cacheId;
       $scope.map = {
         center: {
           latitude: $scope.cache.latitude,
@@ -14,6 +16,14 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Cac
         },
         zoom: 15
       };
+      CacheService.getSingleFound($scope.cache.id).then((results) => {
+        $scope.cache.cacheId = $routeParams.id;
+        $scope.cache.id = results.id;
+        $scope.cache.comment = results.comment;
+        console.log($scope.cache);
+      }).catch((error) => {
+        console.log(error);
+      });
     }).catch((error) => {
       console.log(error);
     });
@@ -22,11 +32,10 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Cac
   getCache();
 
   $scope.submitComment = (cache) => {
-    const updatedFind = CacheService.createNewFoundBy(cache);
-    console.log(cache);
-    CacheService.updateFind(updatedFind, updatedFind.id);
-    getCache();
-    $location.path(`/find/detail/${cache.id}`);
+    const updatedFind = CacheService.createNewFoundBy(cache, cache.id);
+    CacheService.updateFind(updatedFind, cache.id);
+    //updated comment not loading. must refresh page
+    $location.path(`/find/detail/${cache.cacheId}`);
   };
 
 });

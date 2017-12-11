@@ -15,8 +15,8 @@ geoApp.controller("MyFindsCtrl", function ($location, $routeParams, $scope, Auth
 
   getFinds();
 
-  $scope.goToFindsDetail = (cacheId) => {
-    $location.path(`/find/detail/${cacheId}`);
+  $scope.goToFindsDetail = (cache) => {
+    $location.path(`/find/detail/${cache.cacheId}`);
   };
 
 });

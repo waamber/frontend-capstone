@@ -29,7 +29,7 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
   const createNewFoundBy = (found) => {
     let date = new Date();
     return {
-      "cacheId": found.id,
+      "cacheId": found.cacheId,
       "comment": found.comment,
       "dateFound": date,
       "uid": AuthService.getCurrentUid()
@@ -79,5 +79,12 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
     });
   };
 
-  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache, getSingleFound, updateFind };
+  const getSingleCacheEdit = (cacheId) => {
+    return $q((resolve, reject) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/foundBy.json?orderBy="cacheId"&equalTo="${cacheId}"`).then((results) => {
+      }).catch();
+    });
+  };
+
+  return { getCaches, getSingleCache, createNewFoundBy, postNewFoundBy, createNewCache, updateCache, getSingleFound, updateFind, getSingleCacheEdit };
 });

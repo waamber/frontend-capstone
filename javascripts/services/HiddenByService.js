@@ -1,6 +1,8 @@
 'use strict';
 
-geoApp.service("HiddenByService", function ($http, $q, AuthService, FIREBASE_CONFIG) {
+geoApp.service("HiddenByService", function ($http, $q, AuthService, CacheService, FIREBASE_CONFIG, FoundByService) {
+
+  const uid = AuthService.getCurrentUid();
 
   const getAllHidden = () => {
     const uid = AuthService.getCurrentUid();
@@ -25,10 +27,14 @@ geoApp.service("HiddenByService", function ($http, $q, AuthService, FIREBASE_CON
 
   getAllHidden();
 
-
   const deleteMyHide = (cacheId) => {
     return $http.delete(`${FIREBASE_CONFIG.databaseURL}/caches/${cacheId}.json`);
   };
 
-  return { getAllHidden, deleteMyHide };
+  const deleteFoundBy = (cacheId) => {
+    return $http.delete(`${FIREBASE_CONFIG.databaseURL}/foundBy/${cacheId}.json`);
+  };
+
+
+  return { getAllHidden, deleteMyHide, deleteFoundBy };
 });
