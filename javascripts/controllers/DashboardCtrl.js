@@ -22,25 +22,35 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
 
   $scope.option = {};
 
-  // $scope.option = { url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' };
-  //http://maps.google.com/mapfiles/ms/icons/yellow-dot.png
-
   $scope.onClick = function (markers, eventName, model) {
     model.show = !model.show;
   };
 
   const caches = () => {
-
     CacheService.getCaches(uid).then((results) => {
       $scope.caches = results;
-      console.log($scope.caches);
-      for (var i = 0; i < $scope.caches.length; i++) {
-        if ($scope.caches[i].hiddenBy === uid) {
-          $scope.caches[i].option = { url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' };
+      $scope.caches.forEach((cache) => {
+        if (cache.hiddenBy === uid) {
+          cache.option = { url: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' };
         }
-      }
+      });
+      FoundByService.getMyFinds(uid).then((results) => {
+        let foundCaches = results;
+        foundCaches.forEach((foundCache) => {
+          $scope.caches.forEach((cache) => {
+            if (foundCache.cacheId === cache.id) {
+              cache.foundId = foundCache.uid;
+              if (cache.foundId === uid) {
+                cache.option = { url: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png' };
+              }
+            }
+          });
+        });
+      });
     }).catch((error) => {
-      console.log("Error in caches", error);
+      console.log(error);
+    }).catch((error) => {
+      console.log(error);
     });
   };
 
