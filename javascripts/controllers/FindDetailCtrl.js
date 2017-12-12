@@ -45,8 +45,10 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
 
   getCache();
 
+
   $scope.deleteCache = (cache) => {
     FoundByService.deleteMyFind(cache.id).then((results) => {
+
       $location.path('/find');
     }).catch((error) => {
       console.log(error);

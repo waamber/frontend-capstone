@@ -33,9 +33,9 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Aut
 
   $scope.submitComment = (cache) => {
     const updatedFind = CacheService.createNewFoundBy(cache, cache.id);
-    CacheService.updateFind(updatedFind, cache.id);
-    //updated comment not loading. must refresh page
-    $location.path(`/find/detail/${cache.cacheId}`);
+    CacheService.updateFind(updatedFind, cache.id).then(() => {
+      $location.path(`/find/detail/${cache.cacheId}`);
+    }).catch((error) => {
+    });
   };
-
 });

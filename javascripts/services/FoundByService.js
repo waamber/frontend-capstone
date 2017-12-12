@@ -27,7 +27,7 @@ geoApp.service("FoundByService", function ($http, $q, FIREBASE_CONFIG, AuthServi
               fbFinds[key].name = findCacheData.name;
               myFinds.push(fbFinds[key]);
               count++;
-              if ((finishCount - 1) === count) {
+              if (finishCount === count) {
                 resolve(myFinds);
               }
             }).catch((error) => {
