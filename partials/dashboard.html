@@ -36,7 +36,8 @@
     <div id="dashboard-map" class="col-xs-6">
       <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
         <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
-          <ui-gmap-marker ng-repeat="cache in caches" coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="cache.id">
+          <ui-gmap-marker ng-class="map-markers" ng-repeat="cache in caches" coords="{latitude: cache.latitude, longitude: cache.longitude}"
+            idKey="cache.id" icon="cache.option">
             <ui-gmap-window show="show">
               <div class="text-center">
                 {{cache.name}}
