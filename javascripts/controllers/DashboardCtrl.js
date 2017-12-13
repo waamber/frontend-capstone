@@ -6,20 +6,41 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
 
   let styleArray = [
     {
-      "featureType": "all",
-      "elementType": "all",
+      "featureType": "administrative",
+      "elementType": "labels.text.fill",
       "stylers": [
         {
-          "saturation": "-100"
+          "color": "#b1b3b6"
         },
         {
-          "gamma": "0.50"
+          "lightness": "-40"
+        },
+        {
+          "gamma": "1"
         }
       ]
     },
     {
-      "featureType": "administrative.neighborhood",
-      "elementType": "labels",
+      "featureType": "administrative.land_parcel",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape",
+      "elementType": "all",
+      "stylers": [
+        {
+          "color": "#f2f2f2"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.man_made",
+      "elementType": "all",
       "stylers": [
         {
           "visibility": "off"
@@ -31,6 +52,66 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
       "elementType": "all",
       "stylers": [
         {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#b1b3b6"
+        },
+        {
+          "lightness": "-50"
+        },
+        {
+          "gamma": "1.00"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.attraction",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.business",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.government",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.medical",
+      "elementType": "all",
+      "stylers": [
+        {
           "visibility": "off"
         }
       ]
@@ -49,13 +130,55 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
       "elementType": "geometry.fill",
       "stylers": [
         {
-          "color": "#059960"
+          "color": "#83a534"
+        },
+        {
+          "saturation": "-10"
+        },
+        {
+          "lightness": "50"
+        },
+        {
+          "gamma": "1.00"
         }
       ]
     },
     {
-      "featureType": "poi.park",
-      "elementType": "labels",
+      "featureType": "poi.place_of_worship",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.school",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#b1b3b6"
+        },
+        {
+          "lightness": "40"
+        },
+        {
+          "gamma": "1"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.school",
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.sports_complex",
+      "elementType": "all",
       "stylers": [
         {
           "visibility": "off"
@@ -64,10 +187,37 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     },
     {
       "featureType": "road",
-      "elementType": "labels",
+      "elementType": "all",
       "stylers": [
         {
-          "visibility": "off"
+          "saturation": -100
+        },
+        {
+          "lightness": 45
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#b1b3b6"
+        },
+        {
+          "lightness": "-50"
+        },
+        {
+          "gamma": "1.00"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "simplified"
         }
       ]
     },
@@ -76,13 +226,22 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
       "elementType": "geometry.fill",
       "stylers": [
         {
-          "color": "#f57f27"
+          "color": "#8a96b4"
+        },
+        {
+          "saturation": "-10"
+        },
+        {
+          "lightness": "20"
+        },
+        {
+          "gamma": "1.00"
         }
       ]
     },
     {
-      "featureType": "road.highway",
-      "elementType": "labels.icon",
+      "featureType": "road.highway.controlled_access",
+      "elementType": "all",
       "stylers": [
         {
           "visibility": "on"
@@ -91,16 +250,19 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     },
     {
       "featureType": "road.arterial",
-      "elementType": "labels",
+      "elementType": "geometry.fill",
       "stylers": [
         {
-          "visibility": "on"
+          "color": "#8a96b4"
         },
         {
-          "saturation": "0"
+          "saturation": "-10"
         },
         {
-          "gamma": "0.50"
+          "lightness": "20"
+        },
+        {
+          "gamma": "1"
         }
       ]
     },
@@ -115,10 +277,19 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     },
     {
       "featureType": "road.local",
-      "elementType": "labels",
+      "elementType": "geometry.fill",
       "stylers": [
         {
-          "visibility": "off"
+          "color": "#8a96b4"
+        },
+        {
+          "saturation": "-10"
+        },
+        {
+          "lightness": "30"
+        },
+        {
+          "gamma": "1.00"
         }
       ]
     },
@@ -132,20 +303,59 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
       ]
     },
     {
-      "featureType": "water",
-      "elementType": "geometry",
+      "featureType": "transit.station",
+      "elementType": "all",
       "stylers": [
         {
-          "color": "#02758c"
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station.bus",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station.rail",
+      "elementType": "all",
+      "stylers": [
+        {
+          "visibility": "off"
         }
       ]
     },
     {
       "featureType": "water",
-      "elementType": "labels",
+      "elementType": "all",
       "stylers": [
         {
-          "visibility": "off"
+          "color": "#46bcec"
+        },
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#00b2bf"
+        },
+        {
+          "lightness": "60"
+        },
+        {
+          "gamma": "1.00"
+        },
+        {
+          "saturation": "-40"
         }
       ]
     }
@@ -216,7 +426,8 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     $location.path('/hide');
   };
 
-
-
+  $scope.goToNewHide = () => {
+    $location.path('/newhide');
+  };
 
 });
