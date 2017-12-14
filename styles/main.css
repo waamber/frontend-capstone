@@ -8,20 +8,20 @@ body {
 #auth-page {
   height: 100vh;
   width: 100vw;
-  background-image: url("../../images/purplemountain.jpg");
+  background-image: url("../../images/purplemountain.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2; }
+  z-index: -1; }
 
 .login-container {
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
   margin-top: 94px;
   height: 450px;
   position: relative;
-  z-index: 1; }
+  z-index: 2; }
   .login-container .opacity-overlay {
     position: absolute;
     background-color: lightgrey;
@@ -154,6 +154,17 @@ body {
 #cache-detail-header {
   border: 2px solid black; }
 
+#my-finds-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/myfinds-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  z-index: -1; }
+
 .finds-heading {
   font-family: 'Orbitron', sans-serif; }
   .finds-heading h1 {
@@ -189,14 +200,74 @@ body {
         background-color: #F0E100;
         box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
 
+#find-details {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  height: 600px;
+  margin-top: 70px;
+  margin-left: 55px;
+  padding: 0; }
+
+#find-detail-map {
+  border: 2px solid #F0E100;
+  width: 504px;
+  margin-top: 151px;
+  margin-left: 80px;
+  padding: 0;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+
+#my-hides-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/myhides-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  z-index: -1; }
+
+.hides-heading {
+  font-family: 'Orbitron', sans-serif; }
+  .hides-heading h1 {
+    font-size: 65px;
+    margin-left: 25px;
+    margin-bottom: 40px; }
+
+.newHide-btn {
+  margin-top: 5px;
+  margin-left: 41px; }
+
+.hides-search {
+  margin-bottom: 10px; }
+  .hides-search .search-btn {
+    background-color: #F0E100; }
+
+.newHide-btn {
+  padding-top: 11px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #F0E100;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
+
 .hides-list {
   margin-top: 30px; }
   .hides-list .hides-cards {
     margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid black;
+    border-bottom: 2px solid #FFFDFD;
     height: 75px; }
     .hides-list .hides-cards .hides-card-name {
-      padding: 17px; }
+      font-family: 'Gafata', sans-serif;
+      padding: 17px;
+      font-size: 25px;
+      margin-bottom: 10px; }
+      .hides-list .hides-cards .hides-card-name .hides-fa-marker {
+        margin-right: 5px;
+        color: #FFFDFD; }
     .hides-list .hides-cards .hides-card-btn {
-      padding: 9px; }
+      padding: 9px;
+      margin-top: 15px; }
+      .hides-list .hides-cards .hides-card-btn .hidesDetail-btn {
+        padding-top: 11px;
+        font-family: 'Orbitron', sans-serif;
+        background-color: #F0E100;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }

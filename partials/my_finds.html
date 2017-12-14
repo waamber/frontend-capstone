@@ -11,7 +11,7 @@
       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
     </div>
 
-    <div class="finds-list col-xs-12" ng-repeat="finds in foundByMe | filter: searchText">
+    <div class="finds-list col-xs-12" ng-repeat="finds in foundByMe | filter: {city:searchText}">
       <div class="col-xs-6 col-xs-offset-3 finds-cards">
         <div class="find-card-name col-xs-9">
           <i class="fa fa-map-marker finds-fa-marker fa-2x" aria-hidden="true"></i> {{finds.name}}
