@@ -3,25 +3,25 @@
   width: 500px; }
 
 body {
-  background-color: #F3F8F2; }
+  background-color: #CBD2D0; }
 
 #auth-page {
   height: 100vh;
   width: 100vw;
-  background-image: url("../../images/purplemountain.jpg");
+  background-image: url("../../images/purplemountain.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2; }
+  z-index: -1; }
 
 .login-container {
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
   margin-top: 94px;
   height: 450px;
   position: relative;
-  z-index: 1; }
+  z-index: 2; }
   .login-container .opacity-overlay {
     position: absolute;
     background-color: lightgrey;
@@ -38,60 +38,236 @@ body {
     height: 175px;
     margin-bottom: 50px; }
   .login-container .login-btn-container {
-    margin-top: 30px;
-    border-radius: 10px; }
+    margin-top: 30px; }
     .login-container .login-btn-container .google-btn {
-      padding: 0;
-      border-radius: 10px; }
+      padding: 0; }
     .login-container .login-btn-container .google-btn-img {
+      margin-top: 5px;
       height: 51px; }
 
 #dashboard-options {
-  border: 2px solid black;
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
   height: 600px;
-  margin-left: 35px; }
+  margin-left: 35px;
+  margin-top: 70px;
+  padding: 0; }
   #dashboard-options #dashboard-header {
-    margin-bottom: 70px; }
+    margin-bottom: 0px;
+    height: 100px;
+    padding-left: 10px; }
+    #dashboard-options #dashboard-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 61px;
+      border-bottom: 2px solid #C1DDD6;
+      margin: 0;
+      margin-top: 25px;
+      margin-right: 150px;
+      padding: 0; }
+  #dashboard-options .outer-container {
+    margin: 0;
+    padding-right: 0; }
+  #dashboard-options .options-container {
+    margin-top: 25px; }
+    #dashboard-options .options-container .go-arrow {
+      color: white;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      right: 6px;
+      bottom: 12px; }
   #dashboard-options #find-option {
-    border: 2px solid black;
-    margin-bottom: 50px; }
-    #dashboard-options #find-option .goToFindsBtn {
-      margin-top: 11px; }
+    background-color: #0B3C49;
+    padding: 5px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    height: 200px;
+    width: 300px;
+    position: relative; }
+    #dashboard-options #find-option h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      margin-top: 5px;
+      margin-left: 5px; }
   #dashboard-options #hide-option {
-    border: 2px solid black;
-    margin-bottom: 50px; }
-    #dashboard-options #hide-option .goToHidesBtn {
-      margin-top: 11px; }
+    background-color: #731963;
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: 5px;
+    height: 200px;
+    width: 300px; }
+    #dashboard-options #hide-option h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      margin-top: 5px;
+      margin-left: 5px; }
+  #dashboard-options .options-container-2 {
+    margin-top: 25px;
+    margin-left: 0;
+    padding-left: 0; }
+    #dashboard-options .options-container-2 .go-arrow {
+      color: white;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      right: 6px;
+      bottom: 12px; }
+    #dashboard-options .options-container-2 #badge-option {
+      padding: 5px;
+      margin-left: 15px;
+      margin-bottom: 5px;
+      height: 200px;
+      width: 300px; }
+      #dashboard-options .options-container-2 #badge-option h1 {
+        font-family: 'Orbitron', sans-serif;
+        margin-top: 5px;
+        margin-left: 5px; }
+    #dashboard-options .options-container-2 #hide-something {
+      background-color: #F0E100;
+      padding: 5px;
+      margin-left: 15px;
+      margin-top: 5px;
+      height: 200px;
+      width: 300px; }
+      #dashboard-options .options-container-2 #hide-something h1 {
+        font-family: 'Orbitron', sans-serif;
+        margin-top: 5px;
+        margin-left: 5px; }
+
+.map-legend {
+  background-color: #F3F8F2;
+  font-family: 'Gafata', sans-serif;
+  border-bottom: #C1DDD6; }
+  .map-legend .key-marker {
+    height: 47px;
+    margin-left: 10px;
+    margin-right: 10px; }
 
 #dashboard-map {
-  border: 2px solid black;
-  width: 537px;
-  margin-top: 108px;
-  margin-left: 100px; }
+  border: 2px solid #F0E100;
+  width: 504px;
+  margin-top: 151px;
+  margin-left: 80px;
+  padding: 0;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
 
 #cache-detail-header {
   border: 2px solid black; }
+
+#my-finds-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/myfinds-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  z-index: -1; }
+
+.finds-heading {
+  font-family: 'Orbitron', sans-serif; }
+  .finds-heading h1 {
+    font-size: 65px;
+    margin-left: 25px;
+    margin-bottom: 40px; }
+
+.finds-search {
+  margin-bottom: 10px; }
+  .finds-search .search-btn {
+    background-color: #F0E100; }
 
 .finds-list {
   margin-top: 30px; }
   .finds-list .finds-cards {
     margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid black;
+    border-bottom: 2px solid #FFFDFD;
     height: 75px; }
     .finds-list .finds-cards .find-card-name {
-      padding: 17px; }
+      font-family: 'Gafata', sans-serif;
+      padding: 17px;
+      font-size: 25px;
+      margin-bottom: 10px; }
+      .finds-list .finds-cards .find-card-name .finds-fa-marker {
+        margin-right: 5px;
+        color: #FFFDFD; }
     .finds-list .finds-cards .find-card-btn {
-      padding: 9px; }
+      padding: 9px;
+      margin-top: 15px; }
+      .finds-list .finds-cards .find-card-btn .details-btn {
+        padding-top: 11px;
+        font-family: 'Orbitron', sans-serif;
+        background-color: #F0E100;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
+
+#find-details {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  height: 600px;
+  margin-top: 70px;
+  margin-left: 55px;
+  padding: 0; }
+
+#find-detail-map {
+  border: 2px solid #F0E100;
+  width: 504px;
+  margin-top: 151px;
+  margin-left: 80px;
+  padding: 0;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+
+#my-hides-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/myhides-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  z-index: -1; }
+
+.hides-heading {
+  font-family: 'Orbitron', sans-serif; }
+  .hides-heading h1 {
+    font-size: 65px;
+    margin-left: 25px;
+    margin-bottom: 40px; }
+
+.newHide-btn {
+  margin-top: 5px;
+  margin-left: 41px; }
+
+.hides-search {
+  margin-bottom: 10px; }
+  .hides-search .search-btn {
+    background-color: #F0E100; }
+
+.newHide-btn {
+  padding-top: 11px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #F0E100;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
 
 .hides-list {
   margin-top: 30px; }
   .hides-list .hides-cards {
     margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid black;
+    border-bottom: 2px solid #FFFDFD;
     height: 75px; }
     .hides-list .hides-cards .hides-card-name {
-      padding: 17px; }
+      font-family: 'Gafata', sans-serif;
+      padding: 17px;
+      font-size: 25px;
+      margin-bottom: 10px; }
+      .hides-list .hides-cards .hides-card-name .hides-fa-marker {
+        margin-right: 5px;
+        color: #FFFDFD; }
     .hides-list .hides-cards .hides-card-btn {
-      padding: 9px; }
+      padding: 9px;
+      margin-top: 15px; }
+      .hides-list .hides-cards .hides-card-btn .hidesDetail-btn {
+        padding-top: 11px;
+        font-family: 'Orbitron', sans-serif;
+        background-color: #F0E100;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
