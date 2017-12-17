@@ -25,7 +25,6 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
         zoom: 15
       };
       $scope.cache.id = $routeParams.id;
-
     }).catch((error) => {
       console.log("Error in getSingleCache in HideDetailCtrl", error);
     });
@@ -35,7 +34,7 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
 
   $scope.deleteHide = (cache) => {
     CacheService.getSingleFoundByOthers(cache.id).then((results) => {
-
+    //if getSingleFoundByOthers is null 
       HiddenByService.deleteMyHide(results.cacheId);
       HiddenByService.deleteFoundBy(results.id);
       $location.path('/hide');

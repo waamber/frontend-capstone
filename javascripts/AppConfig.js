@@ -8,8 +8,9 @@ const isAuth = (AuthService) => new Promise((resolve, reject) => {
   }
 });
 
-geoApp.run(function ($location, $rootScope, AuthService, FIREBASE_CONFIG) {
+geoApp.run(function ($location, $rootScope, AuthService, BadgeService, FIREBASE_CONFIG) {
   firebase.initializeApp(FIREBASE_CONFIG);
+  BadgeService.getBadges();
 
   $rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
     const logged = AuthService.isAuthenticated();

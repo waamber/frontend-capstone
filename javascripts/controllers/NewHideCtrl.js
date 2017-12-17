@@ -1,12 +1,18 @@
 'use strict';
 
-geoApp.controller("NewHideCtrl", function ($location, $scope, AuthService, HideService) {
+geoApp.controller("NewHideCtrl", function ($location, $scope, AuthService, BadgeService, HideService) {
+
+  const uid = AuthService.getCurrentUid();
 
   $scope.hideIt = function () {
     let newCache = $scope.hide;
-    $scope.hide.hiddenBy = AuthService.getCurrentUid();
+    $scope.hide.hiddenBy = uid;
     HideService.postNewCache(newCache).then(() => {
-      $location.path('/hides');
+      BadgeService.getHideBadge().then((results) => {
+        $location.path('/hide');
+      }).catch((error) => {
+        console.log(error);
+      });
     }).catch((error) => {
       console.log("Error in hideIt", error);
     });
