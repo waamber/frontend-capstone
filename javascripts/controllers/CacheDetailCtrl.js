@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, CacheService) {
+geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, CacheService, BadgeService) {
 
   $scope.date = new Date();
   $scope.cache = {};
@@ -35,7 +35,11 @@ geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, 
     $scope.cache.cacheId = $routeParams.id;
     let newFoundBy = CacheService.createNewFoundBy($scope.cache);
     CacheService.postNewFoundBy(newFoundBy).then(() => {
-      $location.path('/find');
+      BadgeService.getFindBadge().then(() => {
+        $location.path('/find');
+      }).catch((error) => {
+        console.log(error);
+      });
     }).catch((error) => {
       console.log("Error in hideIt", error);
     });

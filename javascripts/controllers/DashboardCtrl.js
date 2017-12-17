@@ -430,4 +430,8 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     $location.path('/newhide');
   };
 
+  $scope.goToBadges = () => {
+    $location.path('/badges');
+  };
+
 });

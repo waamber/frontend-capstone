@@ -155,27 +155,27 @@
     "badge0": {
       "achievement": "First Find",
       "description": "You found your first cache!!!",
-      "icon": "https://i.pinimg.com/originals/11/5f/0a/115f0ac90dfc685ff3564a27cb9e11d1.png"
+      "icon": "https://i.imgur.com/5eKMLVF.png"
     },
     "badge1": {
       "achievement": "First Hide",
       "description": "You hid your first cache!",
-      "icon": "http://es.seaicons.com/wp-content/uploads/2015/11/idea-icon.png"
+      "icon": "https://i.imgur.com/1EJUvil.png"
     },
     "badge2": {
       "achievement": "5 Finds",
       "description": "You've found 5 caches!",
-      "icon": "http://iscomarket.wifeo.com/images/c/coi/coins-flat.png"
+      "icon": "https://i.imgur.com/X5UylIq.png"
     },
     "badge3": {
       "achievement": "5 Hides",
       "description": "You've hidden 5 caches!",
-      "icon": "http://www.myiconfinder.com/uploads/iconsets/f35e99cd862d7f1c84d9dac1d78c3f06-star.png"
+      "icon": "https://i.imgur.com/I1D1QJm.png"
     },
     "badge4": {
       "achievement": "Traveller",
       "description": "You've, found caches in 3 or more cities!",
-      "icon": "https://media.freepik.com/accounts/img/badges/favorites_gold.png"
+      "icon": "https://i.imgur.com/ze0QFMO.png"
     }
   },
   "foundBy": {
@@ -206,20 +206,12 @@
   },
   "userBadges": {
     "userBadges0": {
-      "uid": "",
-      "badgeId": "badge4"
+      "uid": "MYUnvsyUrvgrbgypTAEKs50BRvq2",
+      "badgeId": "badge3"
     },
     "userBadges1": {
-      "uid": "",
-      "badgeId": "badge0"
-    },
-    "userBadges3": {
       "uid": "MYUnvsyUrvgrbgypTAEKs50BRvq2",
-      "badgeId": "badge1"
-    },
-    "userBadges4": {
-      "uid": "MYUnvsyUrvgrbgypTAEKs50BRvq2",
-      "badgeId": "badge2"
+      "badgeId": "badge4"
     }
   }
 }
