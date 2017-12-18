@@ -3,7 +3,7 @@
 geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $window, AuthService, CacheService, FoundByService) {
 
   const uid = AuthService.getCurrentUid();
-
+  $scope.caches = [];
   let styleArray = [
     {
       "featureType": "administrative",
@@ -366,8 +366,6 @@ geoApp.controller("DashboardCtrl", function ($location, $rootScope, $scope, $win
     $scope.map.center.longitude = position.coords.longitude;
     $scope.$apply();
   });
-
-  $scope.caches = [];
 
   $scope.map = {
     center: {

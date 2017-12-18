@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("NewHideCtrl", function ($location, $scope, AuthService, BadgeService, HideService) {
+geoApp.controller("NewHideCtrl", function ($location, ngToast, $scope, AuthService, BadgeService, HideService) {
 
   const uid = AuthService.getCurrentUid();
 
@@ -9,6 +9,7 @@ geoApp.controller("NewHideCtrl", function ($location, $scope, AuthService, Badge
     $scope.hide.hiddenBy = uid;
     HideService.postNewCache(newCache).then(() => {
       BadgeService.getHideBadge().then((results) => {
+        ngToast.create("You've hidden a cache!");
         $location.path('/hide');
       }).catch((error) => {
         console.log(error);

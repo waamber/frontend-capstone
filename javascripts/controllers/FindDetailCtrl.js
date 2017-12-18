@@ -362,7 +362,6 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
     }
   ];
 
-
   $scope.map = {
     center: {
       latitude: "",
@@ -403,7 +402,6 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
   };
 
   getCache();
-
 
   $scope.deleteCache = (cache) => {
     FoundByService.deleteMyFind(cache.id).then((results) => {

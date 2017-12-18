@@ -1,23 +1,23 @@
 <div id='edit-hide-page'>
 
   <div id='edit' class='col-xs-4 col-xs-offset-4'>
-    <h1 class='text-center'>Edit Your Hide!</h1>
+    <h1 class='text-center edit-header'>Edit Your Hide!</h1>
     <form name="editHiddenCache">
       <div class="form-group">
         <label for="cacheName">Name</label>
-        <input type="name" class="form-control" id="cacheNameInput" ng-model="cache.name">
+        <input type="name" class="form-control edit-p" id="cacheNameInput" ng-model="cache.name">
       </div>
       <div>
-        <h2>Location: {{cache.city}}, {{cache.state}}</h2>
-        <h2>Coordinates:</h2>
-        <p>Latitude: {{cache.latitude}}</p>
-        <p>Longitude: {{cache.longitude}}</p>
+        <h2 class="edit-option">Location: {{cache.city}}, {{cache.state}}</h2>
+        <h2 class="edit-option">Coordinates:</h2>
+        <p class="edit-p">Latitude: {{cache.latitude}}</p>
+        <p class="edit-p">Longitude: {{cache.longitude}}</p>
       </div>
       <div class="form-group">
         <label for="cacheDescription">Description</label>
-        <input type="name" class="form-control" id="cacheDescriptionInput" ng-model="cache.description">
+        <input type="name" class="form-control edit-p" id="cacheDescriptionInput" ng-model="cache.description">
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block " ng-click="editSubmit(cache)">Submit Changes</button>
+      <button type="submit" class="btn btn-default edit-submit-btn btn-lg btn-block " ng-click="editSubmit(cache)">Submit Changes</button>
     </form>
   </div>
 

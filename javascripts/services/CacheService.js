@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIREBASE_CONFIG) {
+geoApp.service("CacheService", function ($http, ngToast, $q, $rootScope, AuthService, FIREBASE_CONFIG) {
 
   const uid = AuthService.getCurrentUid();
 
@@ -37,6 +37,7 @@ geoApp.service("CacheService", function ($http, $q, $rootScope, AuthService, FIR
   };
 
   const postNewFoundBy = (find) => {
+    ngToast.create("You've found a new cache!");
     return $http.post(`${FIREBASE_CONFIG.databaseURL}/foundBy.json`, JSON.stringify(find));
   };
 

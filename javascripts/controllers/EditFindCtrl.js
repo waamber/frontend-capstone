@@ -38,4 +38,5 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Aut
     }).catch((error) => {
     });
   };
+
 });

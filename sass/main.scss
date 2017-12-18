@@ -138,10 +138,6 @@ body {
        margin-left: 5px;
      }
 
-    // .goToHidesBtn {
-  
-    // }
-
   }
 
     .options-container-2 {
@@ -215,9 +211,54 @@ body {
 /////CACHE DETAIL PAGE/////
 
 #cache-detail-header {
-  border: 2px solid black;
+    margin-bottom: 0px;
+    height: 100px;
+    padding-left: 10px;
+    
+    h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 35px; 
+      margin: 0;
+      margin-top: 25px;
+      margin-left: 65px;
+      padding: 0;
+    }
+  }
+
+#cache-details {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  height: 400px;
+  margin-top: 30px;
+  margin-left: 55px;
+  padding: 20px;
+  position: relative;
+
+  .cache-h2 {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  p {
+    font-family: 'Gafata', sans-serif;
+  }
+
+  .foundit-btn {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #F0E100;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+    position: absolute;
+    bottom: 10px;
+  }
 }
 
+#detail-map {
+  border: 2px solid #F0E100;
+  width: 504px;
+  margin-top: 40px;
+  margin-left: 80px;
+  padding: 0;
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+}
 
 /////MY FINDS PAGE/////
 
@@ -243,7 +284,6 @@ body {
   }
   
 }
-
 
 .finds-search {
   margin-bottom: 10px;
@@ -306,9 +346,6 @@ body {
   padding: 0;
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
 }
-
-
-
 
 /////MY HIDES PAGE////
 
@@ -392,13 +429,98 @@ body {
 ///// BADGE PAGE /////
 
 .badge-list {
-  border: 2px solid black;
   height: 200px;
 
   .icon-img {
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+///// HIDE DETAIL PAGE /////
+
+#hide-detail-header {
+  font-family: 'Orbitron', sans-serif;
+
+  h4 {
+    font-size: 35px;
+    margin-left: 25px;  
+    margin-bottom: 0; 
+  }
+}
+
+.hide-details-container {
+  padding: 0;
+  margin: 0;
+
+  #hide-details {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  height: 400px;
+  width: 675px;
+  margin-left: 35px;
+  margin-right: 10px;
+  margin-top: 40px;
+  padding: 15px;
+  position: relative;
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
   }
 
+  p {
+    font-family: 'Gafata', sans-serif;
+  }
+
+  .hide-btn-group {
+    margin-top: 35px;
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 10px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+    
+    .btn {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .edit-btn {
+      background-color: #F0E100;
+    }  
+  }
 }
+
+#hide-detail-map {
+  border: 2px solid #F0E100;
+  width: 504px;
+  margin-top: 48px;
+  margin-left: 80px;
+  padding: 0;
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+}
+}
+///// EDIT HIDE PAGE /////
+
+.edit-header {
+  font-family: 'Orbitron', sans-serif;
+}
+
+label {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.edit-option {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.edit-p {
+  font-family: 'Gafata', sans-serif;
+}
+
+.edit-submit-btn {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #F0E100;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+
 
