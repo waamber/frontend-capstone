@@ -1,25 +1,24 @@
 <div id="edit-find-page">
 
-  <div id="edit-find-header" class="col-xs-6 col-xs-offset-3">
-    <h4>{{cache.name}}</h4>
-  </div>
+  <div class="edit-find-container col-xs-4 col-xs-offset-4">
+    <div id="edit-find-header">
+      <h2>{{cache.name}}</h2>
+    </div>
 
-  <div class="edit-find-container col-xs-12">
-
-    <div id="edit-find-details" class="col-xs-6 col-xs-offset-3">
-      <p>Date Found: {{cache.dateFound}}</p>
-      <h2>Location: {{cache.city}}, {{cache.state}}</h2>
-      <h2>Coordinates:</h2>
-      <p>Latitude: {{cache.latitude}}</p>
-      <p>Longitude: {{cache.longitude}}</p>
-      <h2>Description:</h2>
-      <p>{{cache.description}}</p>
+    <div id="edit-find-details">
+      <p class="edit-p">Date Found: {{cache.dateFound}}</p>
+      <h2 class="edit-option">Location: {{cache.city}}, {{cache.state}}</h2>
+      <h2 class="edit-option">Coordinates:</h2>
+      <p class="edit-p">Latitude: {{cache.latitude}}</p>
+      <p class="edit-p">Longitude: {{cache.longitude}}</p>
+      <h2 class="edit-option">Description:</h2>
+      <p class="edit-p">{{cache.description}}</p>
       <form name="editFoundCache">
         <div class="form-group">
           <label for="cacheComment">Leave A Comment:</label>
           <input type="name" class="form-control" id="cacheCommentInput" ng-model="cache.comment">
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block " ng-click="submitComment(cache)">Submit Changes</button>
+        <button type="submit" class="btn btn-default comment-submit-btn btn-lg btn-block " ng-click="submitComment(cache)">Submit Changes</button>
       </form>
     </div>
 

@@ -5,7 +5,6 @@ geoApp.controller("MyFindsCtrl", function ($location, $routeParams, $scope, Auth
   const uid = AuthService.getCurrentUid();
   $scope.foundByMe = [];
 
-
   const getFinds = () => {
     FoundByService.getMyFinds(uid).then((results) => {
       $scope.foundByMe = results;

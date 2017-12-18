@@ -155,7 +155,7 @@
     "badge0": {
       "achievement": "First Find",
       "description": "You found your first cache!!!",
-      "icon": "https://i.imgur.com/5eKMLVF.png"
+      "icon": "https://i.imgur.com/bWcLHws.png"
     },
     "badge1": {
       "achievement": "First Hide",
@@ -204,14 +204,5 @@
       "dateFound": ""
     }
   },
-  "userBadges": {
-    "userBadges0": {
-      "uid": "MYUnvsyUrvgrbgypTAEKs50BRvq2",
-      "badgeId": "badge3"
-    },
-    "userBadges1": {
-      "uid": "MYUnvsyUrvgrbgypTAEKs50BRvq2",
-      "badgeId": "badge4"
-    }
-  }
+  "userBadges": {}
 }

@@ -81,14 +81,14 @@ geoApp.service("BadgeService", function ($http, $q, ngToast, AuthService, FIREBA
           postNewUserBadge(newUserBadge).then(() => {
             const earnedBadge = returnBadges().filter(badge => badge.id === 'badge1');
             resolve(earnedBadge);
-            //ngToast.create("You've earned a new badge!");
+            ngToast.create("You've earned a new badge!");
           });
         } else if (results.length === 5) {
           let newUserBadge = createNewUserBadge(uid, 'badge3');
           postNewUserBadge(newUserBadge).then(() => {
             const earnedBadge = returnBadges().filter(badge => badge.id === 'badge3');
             resolve(earnedBadge);
-            //ngToast.create("You've earned a new badge!");
+            ngToast.create("You've earned a new badge!");
           }).catch();
         } else {
           reject('You earned nothing, fool.');
@@ -107,14 +107,14 @@ geoApp.service("BadgeService", function ($http, $q, ngToast, AuthService, FIREBA
           postNewUserBadge(newUserBadge).then(() => {
             const earnedBadge = returnBadges().filter(badge => badge.id === 'badge0');
             resolve(earnedBadge);
-            //ngToast.create("You've earned a new badge!");
+            ngToast.create("You've earned a new badge!");
           });
         } else if (results.length === 5) {
           let newUserBadge = createNewUserBadge(uid, 'badge2');
           postNewUserBadge(newUserBadge).then(() => {
             const earnedBadge = returnBadges().filter(badge => badge.id === 'badge2');
             resolve(earnedBadge);
-            //ngToast.create("You've earned a new badge!");
+            ngToast.create("You've earned a new badge!");
           }).catch();
         } else {
           reject('You earned nothing, fool.');
@@ -125,8 +125,6 @@ geoApp.service("BadgeService", function ($http, $q, ngToast, AuthService, FIREBA
     });
   };
 
-
   return { createNewUserBadge, getBadges, getUserBadges, postNewUserBadge, getHideBadge, getFindBadge, getMoreBadges };
-
 
 });

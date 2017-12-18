@@ -5,7 +5,7 @@
 
   <div class="new-hide-container col-xs-12">
 
-    <div id="hide-form" class="col-xs-6">
+    <div id="hide-form" class="col-xs-6 col-xs-offset-3">
 
       <form name="newHideForm">
         <div class="form-group">
@@ -43,21 +43,5 @@
 
     </div>
   </div>
-
-  <div id="detail-map" class="col-xs-6">
-    <div id="map_canvas" class="dashboard-map">
-      <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
-        <ui-gmap-marker coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="0">
-          <ui-gmap-window show="show">
-            <div class="text-center">
-              {{cache.name}}
-            </div>
-          </ui-gmap-window>
-        </ui-gmap-marker>
-      </ui-gmap-google-map>
-    </div>
-  </div>
-
-</div>
 
 </div>
