@@ -5,26 +5,32 @@
 body {
   background-color: #CBD2D0; }
 
+.navbar {
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  background-color: #F0E100;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+
 #auth-page {
   height: 100vh;
   width: 100vw;
-  background-image: url("../../images/purplemountain.png");
+  background-image: url("../../images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; }
+  z-index: 1; }
 
 .login-container {
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
-  margin-top: 94px;
-  height: 450px;
+  margin-top: 140px;
+  height: 375px;
   position: relative;
   z-index: 2; }
   .login-container .opacity-overlay {
     position: absolute;
-    background-color: lightgrey;
+    background-color: #F3F8F2;
     opacity: 0.2;
     height: 100%;
     width: 100%;
@@ -32,15 +38,27 @@ body {
     bottom: 0;
     left: 0;
     right: 0; }
+  .login-container .auth-logo {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif; }
+    .login-container .auth-logo #logo {
+      width: 45px;
+      height: 45px; }
   .login-container .about-app {
-    background-color: #FCF8EF;
     margin-top: 70px;
     height: 175px;
-    margin-bottom: 50px; }
+    padding: 0; }
+    .login-container .about-app .auth-intro {
+      margin-top: 45px;
+      font-family: 'Gafata', sans-serif;
+      text-shadow: 1px 1px lightgrey; }
   .login-container .login-btn-container {
     margin-top: 30px; }
     .login-container .login-btn-container .google-btn {
-      padding: 0; }
+      margin-top: 0;
+      padding: 0;
+      background-color: #F0E100;
+      box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
     .login-container .login-btn-container .google-btn-img {
       margin-top: 5px;
       height: 51px; }
@@ -236,21 +254,64 @@ body {
         background-color: #F0E100;
         box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
 
+#find-detail-header {
+  margin-bottom: 0px;
+  height: 100px;
+  padding-left: 10px; }
+  #find-detail-header h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    margin: 0;
+    margin-top: 25px;
+    margin-left: 65px;
+    padding: 0; }
+
 #find-details {
   background-color: #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
-  height: 600px;
-  margin-top: 70px;
+  height: 450px;
+  margin-top: 30px;
   margin-left: 55px;
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  padding: 20px; }
+  #find-details .detail-h2 {
+    font-family: 'Orbitron', sans-serif; }
+  #find-details p {
+    font-family: 'Gafata', sans-serif; }
+  #find-details .find-detail-btn {
+    font-family: 'Orbitron', sans-serif;
+    position: absolute;
+    bottom: 10px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
+    #find-details .find-detail-btn .add-comment-btn {
+      background-color: #F0E100; }
 
 #find-detail-map {
   border: 2px solid #F0E100;
   width: 504px;
-  margin-top: 151px;
+  margin-top: 60px;
   margin-left: 80px;
   padding: 0;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+
+.edit-find-container {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  height: 475px;
+  margin-top: 70px; }
+  .edit-find-container #edit-find-header {
+    font-family: 'Orbitron', sans-serif; }
+  .edit-find-container label {
+    font-family: 'Orbitron', sans-serif; }
+  .edit-find-container .edit-option {
+    font-family: 'Orbitron', sans-serif; }
+  .edit-find-container .edit-p {
+    font-family: 'Gafata', sans-serif; }
+  .edit-find-container .comment-submit-btn {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #F0E100;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
 
 #my-hides-page {
   height: 100vh;
@@ -308,11 +369,23 @@ body {
         background-color: #F0E100;
         box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
 
-.badge-list {
-  height: 200px; }
-  .badge-list .icon-img {
-    width: 100px;
-    height: 100px; }
+#badge-header {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 30px; }
+  #badge-header h1 {
+    font-size: 65px;
+    margin-left: 25px; }
+
+.badge-container {
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+  .badge-container .badge-list {
+    margin-top: 20px;
+    height: 200px;
+    font-family: 'Orbitron', sans-serif; }
+    .badge-container .badge-list .icon-img {
+      width: 100px;
+      height: 100px; }
 
 #hide-detail-header {
   font-family: 'Orbitron', sans-serif; }
@@ -355,6 +428,12 @@ body {
     margin-left: 80px;
     padding: 0;
     box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
+
+#edit {
+  margin-top: 70px;
+  background-color: #F3F8F2;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  height: 475px; }
 
 .edit-header {
   font-family: 'Orbitron', sans-serif; }

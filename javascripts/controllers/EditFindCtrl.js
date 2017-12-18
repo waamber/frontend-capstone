@@ -20,7 +20,6 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Aut
         $scope.cache.cacheId = $routeParams.id;
         $scope.cache.id = results.id;
         $scope.cache.comment = results.comment;
-        console.log($scope.cache);
       }).catch((error) => {
         console.log(error);
       });

@@ -8,24 +8,24 @@
 
     <div id="find-details" class="col-xs-6">
       <p>Date Found: {{cache.dateFound}}</p>
-      <h2>Location: {{cache.city}}, {{cache.state}}</h2>
-      <h2>Coordinates:</h2>
+      <h2 class="detail-h2">Location: {{cache.city}}, {{cache.state}}</h2>
+      <h2 class="detail-h2">Coordinates:</h2>
       <p>Latitude: {{cache.latitude}}</p>
       <p>Longitude: {{cache.longitude}}</p>
-      <h2>Description:</h2>
+      <h2 class="detail-h2">Description:</h2>
       <p>{{cache.description}}</p>
-      <h2>Comments:</h2>
+      <h2 class="detail-h2">Comments:</h2>
       <p>{{cache.comment}}</p>
-      <div class="btn-group" role="group" aria-label="...">
+      <div class="btn-group find-detail-btn" role="group" aria-label="...">
         <button type="button" class="btn btn-danger" ng-click="deleteCache(cache)">Delete</button>
-        <button type="button" class="btn btn-default" ng-click="addComment(cache)">Add Comment</button>
+        <button type="button" class="btn btn-default add-comment-btn" ng-click="addComment(cache)">Add Comment</button>
       </div>
     </div>
 
     <div id="find-detail-map" class="col-xs-6">
       <div id="map_canvas" class="dashboard-map">
         <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
-          <ui-gmap-marker coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="0" icon="cache.option">
+          <ui-gmap-marker coords="{latitude: cache.latitude, longitude: cache.longitude}" idKey="0">
             <ui-gmap-window show="show">
               <div class="text-center">
                 {{cache.name}}

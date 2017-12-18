@@ -376,6 +376,7 @@ geoApp.controller("CacheDetailCtrl", function ($location, $routeParams, $scope, 
   const getCache = () => {
     CacheService.getSingleCache($routeParams.id).then((results) => {
       $scope.cache = results.data;
+      $scope.cache.option = { url: 'https://i.imgur.com/wdnLOyk.png' };
       $scope.map = {
         center: {
           latitude: $scope.cache.latitude,

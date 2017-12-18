@@ -2,7 +2,7 @@
 
 geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, AuthService, CacheService, FoundByService) {
   const uid = AuthService.getCurrentUid();
-  $scope.date = new Date();
+  $scope.date = new Date().toString('dd/mm/yyyy');
   $scope.cache = {};
   $scope.map = {};
   let styleArray = [
@@ -380,7 +380,7 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
         $scope.cache.latitude = cache.latitude;
         $scope.cache.longitude = cache.longitude;
         $scope.cache.city = cache.city;
-        $scope.cache.state = cache.city;
+        $scope.cache.state = cache.state;
         $scope.cache.description = cache.description;
         $scope.cache.name = cache.name;
         $scope.cache.hiddenBy = cache.hiddenBy;
