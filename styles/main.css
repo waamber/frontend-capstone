@@ -94,6 +94,14 @@ body {
       position: absolute;
       right: 6px;
       bottom: 12px; }
+  #dashboard-options .arrow {
+    color: black;
+    position: absolute;
+    right: 14px;
+    bottom: 0;
+    font-size: 65px; }
+  #dashboard-options .arrow:hover {
+    color: white; }
   #dashboard-options #find-option {
     background-color: #0B3C49;
     padding: 5px;

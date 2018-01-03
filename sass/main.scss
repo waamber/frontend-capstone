@@ -129,7 +129,21 @@ body {
       position: absolute;
       right: 6px;
       bottom: 12px;
+      
     }
+    
+}
+
+.arrow {
+  color: black;
+  position: absolute;
+  right: 14px;
+  bottom: 0;
+  font-size: 65px;
+}
+
+.arrow:hover {
+  color: white;
 }
 
   #find-option {
