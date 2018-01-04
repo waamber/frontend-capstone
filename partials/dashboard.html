@@ -13,46 +13,46 @@
 
   <div id="dashboard-page" class="col-xs-12">
 
-    <div id="dashboard-options" class="col-xs-6">
+    <div id="dashboard-options" class="col-lg-6 col-xs-12">
       <div id='dashboard-header'>
         <h1>Browse Caches</h1>
       </div>
-      <div class="col-xs-6 outer-container">
-        <div class="options-container">
-          <div id="find-option" class="col-xs-3">
-            <h1>Your Finds</h1>
-            <img class="go-arrow" src="http://www.tabletandticket.com/wp-content/uploads/intense-cache/icons/plugin/elusive/chevron-right.svg"
-              ng-click="goToFinds()">
-          </div>
-          <div id="hide-option" class="col-xs-3">
-            <h1>Your Hides</h1>
-            <img class="go-arrow" src="http://www.tabletandticket.com/wp-content/uploads/intense-cache/icons/plugin/elusive/chevron-right.svg"
-              ng-click="goToHides()">
-          </div>
+
+      <div class="col-xs-12 col-md-6">
+        <div id="find-option" class="col-xs-12">
+          <h1>Your Finds</h1>
+          <div class="arrow" ng-click="goToFinds()">></div>
         </div>
       </div>
-      <div class="col-xs-6 options-container-2">
-        <div id="badge-option" class="col-xs-3">
+      <div class="col-xs-12 col-md-6">
+        <div id="hide-option" class="col-xs-12">
+          <h1>Your Hides</h1>
+          <div class="arrow" ng-click="goToHides()">></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div id="badge-option" class="col-xs-12">
           <h1>Badges</h1>
-          <img class="go-arrow" src="http://www.tabletandticket.com/wp-content/uploads/intense-cache/icons/plugin/elusive/chevron-right.svg"
-            ng-click="goToBadges()">
-        </div>
-        <div id="hide-something" class="col-xs-3">
-          <h1>Hide Something</h1>
-          <img class="go-arrow" src="http://www.tabletandticket.com/wp-content/uploads/intense-cache/icons/plugin/elusive/chevron-right.svg"
-            ng-click="goToNewHide()">
+          <div class="arrow" ng-click="goToBadges()">></div>
         </div>
       </div>
+      <div class="col-xs-12 col-md-6">
+        <div id="hide-something" class="col-xs-12">
+          <h1>Hide Something</h1>
+          <div class="arrow" ng-click="goToNewHide()">></div>
+        </div>
+      </div>
+
     </div>
 
-    <div id="dashboard-map" class="col-xs-6">
+    <div id="dashboard-map" class="col-md-6 col-xs-12">
       <div class="col-xs-12 map-legend">
         <div class="map-keys text-center">
           <h6>Unfound: <img class="key-marker" src="../../images/unfound-marker.png"> Found By You: <img class="key-marker" src="../../images/found-marker.png">            Hidden By You: <img class="key-marker" src="../../images/hidden-marker.png"></h6>
         </div>
       </div>
       <div id="map_canvas" ng-controller="DashboardCtrl" class="dashboard-map">
-        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds">
           <ui-gmap-marker ng-class="map-markers" ng-repeat="cache in caches" coords="{latitude: cache.latitude, longitude: cache.longitude}"
             idKey="cache.id" icon="cache.option">
             <ui-gmap-window show="show">
@@ -62,7 +62,6 @@
                   <a class="location" href="#!/cache/detail/{{cache.id}}">Details</a>
                 </div>
               </div>
-
             </ui-gmap-window>
           </ui-gmap-marker>
         </ui-gmap-google-map>

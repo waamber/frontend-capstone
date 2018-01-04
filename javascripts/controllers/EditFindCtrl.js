@@ -16,6 +16,7 @@ geoApp.controller("EditFindCtrl", function ($location, $routeParams, $scope, Aut
         },
         zoom: 15
       };
+
       CacheService.getSingleFound($scope.cache.id).then((results) => {
         $scope.cache.cacheId = $routeParams.id;
         $scope.cache.id = results.id;

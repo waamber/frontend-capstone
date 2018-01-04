@@ -65,13 +65,11 @@ geoApp.service("CacheService", function ($http, ngToast, $q, $rootScope, AuthSer
   const getSingleFoundByOthers = (cacheId) => {
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/foundBy.json?orderBy="cacheId"&equalTo="${cacheId}"`).then((results) => {
-        let foundCache = results.data;
-        if (foundCache) {
-          Object.keys(foundCache).forEach((key) => {
-            foundCache[key].id = key;
-            resolve(foundCache[key]);
-          });
-        }
+        let foundCache = results.data || {};
+        Object.keys(foundCache).forEach((key) => {
+          foundCache[key].id = key;
+          resolve(foundCache[key]);
+        });
       }).catch((error) => {
         console.log(error);
       });
