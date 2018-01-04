@@ -14,77 +14,30 @@ body {
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
 }
 
-/////LOGIN PAGE//////
+///// AUTH PAGE /////
 
-#auth-page {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('../../images/background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+.login {
+  padding: 55px;
 }
 
-.login-container {
-  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
-  margin-top: 140px;
-  height: 375px;
-  position: relative;
-  z-index: 2;
+#cache-me-logo {
+  height: 55px;
+}
 
-  .opacity-overlay {
-    position: absolute;
-    background-color: #F3F8F2;
-    opacity: 0.2;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.intro {
+  margin-top: 5px;
+  font-family: 'Gafata', sans-serif;
+}
+
+.login-btn {
+  padding: 0;
+  margin-top: 25px;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+
+  .google-btn-img {
+  height: 55px;
+  background-color: #F0E100;
   }
-
-  .auth-logo {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-
-    #logo {
-      width: 45px;
-      height: 45px;
-    }
-  }
-
-  .about-app {
-    //background-color: #F3F8F2;
-    margin-top: 70px;
-    height: 175px;
-    padding: 0;
-  
-    .auth-intro {
-      margin-top: 45px;
-      font-family: 'Gafata', sans-serif;
-      text-shadow: 1px 1px lightgrey;
-    }
-  }
-
-  .login-btn-container {
-    margin-top: 30px;
-
-    .google-btn {
-      margin-top: 0;
-      padding: 0;
-      background-color: #F0E100;
-      box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
-    }
-
-    .google-btn-img {
-      margin-top: 5px;
-      height: 51px;
-   }
-  } 
 }
 
 /////DASHBOARD PAGE/////
@@ -92,47 +45,23 @@ body {
 #dashboard-options {
   background-color: #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
-  height: 600px;
   margin-left: 35px;
   margin-top: 70px;
   padding: 0;
 
   #dashboard-header {
-    margin-bottom: 0px;
-    height: 100px;
+    margin-bottom: 10px;
     padding-left: 10px;
     
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 61px;
       border-bottom: 2px solid #C1DDD6; 
-      margin: 0;
       margin-top: 25px;
       margin-right: 150px;
       padding: 0;
     }
   }
-
-.outer-container {
-  margin: 0;
-  padding-right: 0;
-}
-
-
-.options-container {
-  margin-top: 25px;
-
-   .go-arrow {
-      color: white;
-      height: 50px;
-      width: 50px;
-      position: absolute;
-      right: 6px;
-      bottom: 12px;
-      
-    }
-    
-}
 
 .arrow {
   color: black;
@@ -148,12 +77,9 @@ body {
 
   #find-option {
      background-color: #0B3C49;
-     padding: 5px;
-     margin-left: 15px;
-     margin-bottom: 5px;
      height: 200px;
-     width: 300px;
      position: relative;
+     margin-bottom: 10px;
      
      h1 {
        font-family: 'Orbitron', sans-serif;
@@ -165,11 +91,8 @@ body {
 
   #hide-option {
      background-color: #731963;
-     padding: 5px;
-     margin-left: 15px;
-     margin-top: 5px;
      height: 200px;
-     width: 300px;
+     margin-bottom: 10px;
 
     h1 {
        font-family: 'Orbitron', sans-serif;
@@ -180,41 +103,31 @@ body {
 
   }
 
-    .options-container-2 {
-      margin-top: 25px;
-      margin-left: 0;
-      padding-left: 0;
-
-       .go-arrow {
-        color: white;
-        height: 50px;
-        width: 50px;
-        position: absolute;
-        right: 6px;
-        bottom: 12px;
+   .go-arrow {
+      color: white;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      right: 6px;
+      bottom: 12px;
     }
 
-      #badge-option {
-      padding: 5px;
-      margin-left: 15px;
-      margin-bottom: 5px;
+  #badge-option {
       height: 200px;
-      width: 300px;
+      margin-bottom: 10px;
 
       h1 {
         font-family: 'Orbitron', sans-serif;
         margin-top: 5px;
         margin-left: 5px;
       }
+
     }
 
     #hide-something {
       background-color: #F0E100;
-      padding: 5px;
-      margin-left: 15px;
-      margin-top: 5px;
       height: 200px;
-      width: 300px;
+      margin-bottom: 10px;
 
       h1 {
         font-family: 'Orbitron', sans-serif;
@@ -223,7 +136,6 @@ body {
       }
     }
   }
-}
 
 .map-legend {
   background-color: #F3F8F2;
@@ -240,7 +152,7 @@ body {
 #dashboard-map {
   border: 2px solid #F0E100;
   width: 504px;
-  margin-top: 151px;
+  margin-top: 100px;
   margin-left: 80px;
   padding: 0;
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
@@ -430,7 +342,7 @@ body {
 .edit-find-container {
   background-color : #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
-  height: 475px;
+  height: 525px;
   margin-top: 70px;
 
   #edit-find-header {
@@ -450,6 +362,7 @@ body {
   }
 
   .comment-submit-btn {
+    margin-top: 5px;
     font-family: 'Orbitron', sans-serif;
     background-color: #F0E100;
     box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
@@ -565,8 +478,6 @@ body {
 
 }
 
-
-
 ///// HIDE DETAIL PAGE /////
 
 #hide-detail-header {
@@ -587,7 +498,6 @@ body {
   background-color: #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
   height: 400px;
-  width: 675px;
   margin-left: 35px;
   margin-right: 10px;
   margin-top: 40px;

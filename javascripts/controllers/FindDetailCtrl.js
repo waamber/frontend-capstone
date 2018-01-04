@@ -14,9 +14,7 @@ geoApp.controller("FindDetailCtrl", function ($location, $routeParams, $scope, A
     zoom: 15
   };
 
-
   const getCache = () => {
-
     CacheService.getSingleFound($routeParams.id).then((results) => {
       $scope.cache = results;
       CacheService.getSingleCache($scope.cache.cacheId).then((results) => {

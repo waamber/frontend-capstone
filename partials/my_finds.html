@@ -4,19 +4,19 @@
     <div class="finds-header">
       <h1>My Finds</h1>
     </div>
-    <div class="finds-search col-xs-4 col-xs-offset-4 input-group">
+    <div class="finds-search col-xs-4 col-xs-offset-4 col-md-4 col-md-offset-4 input-group">
       <span class="input-group-btn">
         <button class="btn btn-default search-btn" type="button"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
       </span>
       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
     </div>
 
-    <div class="finds-list col-xs-12" ng-repeat="finds in foundByMe | filter: {city:searchText}">
-      <div class="col-xs-6 col-xs-offset-3 finds-cards">
+    <div class="finds-list col-xs-12 col-md-12" ng-repeat="finds in foundByMe | filter: {city:searchText}">
+      <div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 finds-cards">
         <div class="find-card-name col-xs-9">
           <i class="fa fa-map-marker finds-fa-marker fa-2x" aria-hidden="true"></i> {{finds.name}}
         </div>
-        <div class="col-xs-3 find-card-btn">
+        <div class="col-xs-3 col-md-3 find-card-btn">
           <button type="button" class="btn btn-default details-btn" ng-click="goToFindsDetail(finds)">Details</button>
         </div>
       </div>

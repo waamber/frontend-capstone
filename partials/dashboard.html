@@ -13,35 +13,39 @@
 
   <div id="dashboard-page" class="col-xs-12">
 
-    <div id="dashboard-options" class="col-xs-6">
+    <div id="dashboard-options" class="col-lg-6 col-xs-12">
       <div id='dashboard-header'>
         <h1>Browse Caches</h1>
       </div>
-      <div class="col-xs-6 outer-container">
-        <div class="options-container">
-          <div id="find-option" class="col-xs-3">
-            <h1>Your Finds</h1>
-            <div class="arrow" ng-click="goToFinds()">></div>
-          </div>
-          <div id="hide-option" class="col-xs-3">
-            <h1>Your Hides</h1>
-            <div class="arrow" ng-click="goToHides()">></div>
-          </div>
+
+      <div class="col-xs-12 col-md-6">
+        <div id="find-option" class="col-xs-12">
+          <h1>Your Finds</h1>
+          <div class="arrow" ng-click="goToFinds()">></div>
         </div>
       </div>
-      <div class="col-xs-6 options-container-2">
-        <div id="badge-option" class="col-xs-3">
+      <div class="col-xs-12 col-md-6">
+        <div id="hide-option" class="col-xs-12">
+          <h1>Your Hides</h1>
+          <div class="arrow" ng-click="goToHides()">></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div id="badge-option" class="col-xs-12">
           <h1>Badges</h1>
           <div class="arrow" ng-click="goToBadges()">></div>
         </div>
-        <div id="hide-something" class="col-xs-3">
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div id="hide-something" class="col-xs-12">
           <h1>Hide Something</h1>
           <div class="arrow" ng-click="goToNewHide()">></div>
         </div>
       </div>
+
     </div>
 
-    <div id="dashboard-map" class="col-xs-6">
+    <div id="dashboard-map" class="col-md-6 col-xs-12">
       <div class="col-xs-12 map-legend">
         <div class="map-keys text-center">
           <h6>Unfound: <img class="key-marker" src="../../images/unfound-marker.png"> Found By You: <img class="key-marker" src="../../images/found-marker.png">            Hidden By You: <img class="key-marker" src="../../images/hidden-marker.png"></h6>

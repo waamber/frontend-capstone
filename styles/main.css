@@ -11,89 +11,40 @@ body {
   background-color: #F0E100;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
 
-#auth-page {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("../../images/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1; }
+.login {
+  padding: 55px; }
 
-.login-container {
-  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
-  margin-top: 140px;
-  height: 375px;
-  position: relative;
-  z-index: 2; }
-  .login-container .opacity-overlay {
-    position: absolute;
-    background-color: #F3F8F2;
-    opacity: 0.2;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  .login-container .auth-logo {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif; }
-    .login-container .auth-logo #logo {
-      width: 45px;
-      height: 45px; }
-  .login-container .about-app {
-    margin-top: 70px;
-    height: 175px;
-    padding: 0; }
-    .login-container .about-app .auth-intro {
-      margin-top: 45px;
-      font-family: 'Gafata', sans-serif;
-      text-shadow: 1px 1px lightgrey; }
-  .login-container .login-btn-container {
-    margin-top: 30px; }
-    .login-container .login-btn-container .google-btn {
-      margin-top: 0;
-      padding: 0;
-      background-color: #F0E100;
-      box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
-    .login-container .login-btn-container .google-btn-img {
-      margin-top: 5px;
-      height: 51px; }
+#cache-me-logo {
+  height: 55px; }
+
+.intro {
+  margin-top: 5px;
+  font-family: 'Gafata', sans-serif; }
+
+.login-btn {
+  padding: 0;
+  margin-top: 25px;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
+  .login-btn .google-btn-img {
+    height: 55px;
+    background-color: #F0E100; }
 
 #dashboard-options {
   background-color: #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
-  height: 600px;
   margin-left: 35px;
   margin-top: 70px;
   padding: 0; }
   #dashboard-options #dashboard-header {
-    margin-bottom: 0px;
-    height: 100px;
+    margin-bottom: 10px;
     padding-left: 10px; }
     #dashboard-options #dashboard-header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 61px;
       border-bottom: 2px solid #C1DDD6;
-      margin: 0;
       margin-top: 25px;
       margin-right: 150px;
       padding: 0; }
-  #dashboard-options .outer-container {
-    margin: 0;
-    padding-right: 0; }
-  #dashboard-options .options-container {
-    margin-top: 25px; }
-    #dashboard-options .options-container .go-arrow {
-      color: white;
-      height: 50px;
-      width: 50px;
-      position: absolute;
-      right: 6px;
-      bottom: 12px; }
   #dashboard-options .arrow {
     color: black;
     position: absolute;
@@ -104,12 +55,9 @@ body {
     color: white; }
   #dashboard-options #find-option {
     background-color: #0B3C49;
-    padding: 5px;
-    margin-left: 15px;
-    margin-bottom: 5px;
     height: 200px;
-    width: 300px;
-    position: relative; }
+    position: relative;
+    margin-bottom: 10px; }
     #dashboard-options #find-option h1 {
       font-family: 'Orbitron', sans-serif;
       color: white;
@@ -117,48 +65,35 @@ body {
       margin-left: 5px; }
   #dashboard-options #hide-option {
     background-color: #731963;
-    padding: 5px;
-    margin-left: 15px;
-    margin-top: 5px;
     height: 200px;
-    width: 300px; }
+    margin-bottom: 10px; }
     #dashboard-options #hide-option h1 {
       font-family: 'Orbitron', sans-serif;
       color: white;
       margin-top: 5px;
       margin-left: 5px; }
-  #dashboard-options .options-container-2 {
-    margin-top: 25px;
-    margin-left: 0;
-    padding-left: 0; }
-    #dashboard-options .options-container-2 .go-arrow {
-      color: white;
-      height: 50px;
-      width: 50px;
-      position: absolute;
-      right: 6px;
-      bottom: 12px; }
-    #dashboard-options .options-container-2 #badge-option {
-      padding: 5px;
-      margin-left: 15px;
-      margin-bottom: 5px;
-      height: 200px;
-      width: 300px; }
-      #dashboard-options .options-container-2 #badge-option h1 {
-        font-family: 'Orbitron', sans-serif;
-        margin-top: 5px;
-        margin-left: 5px; }
-    #dashboard-options .options-container-2 #hide-something {
-      background-color: #F0E100;
-      padding: 5px;
-      margin-left: 15px;
+  #dashboard-options .go-arrow {
+    color: white;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 6px;
+    bottom: 12px; }
+  #dashboard-options #badge-option {
+    height: 200px;
+    margin-bottom: 10px; }
+    #dashboard-options #badge-option h1 {
+      font-family: 'Orbitron', sans-serif;
       margin-top: 5px;
-      height: 200px;
-      width: 300px; }
-      #dashboard-options .options-container-2 #hide-something h1 {
-        font-family: 'Orbitron', sans-serif;
-        margin-top: 5px;
-        margin-left: 5px; }
+      margin-left: 5px; }
+  #dashboard-options #hide-something {
+    background-color: #F0E100;
+    height: 200px;
+    margin-bottom: 10px; }
+    #dashboard-options #hide-something h1 {
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 5px;
+      margin-left: 5px; }
 
 .map-legend {
   background-color: #F3F8F2;
@@ -172,7 +107,7 @@ body {
 #dashboard-map {
   border: 2px solid #F0E100;
   width: 504px;
-  margin-top: 151px;
+  margin-top: 100px;
   margin-left: 80px;
   padding: 0;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75); }
@@ -306,7 +241,7 @@ body {
 .edit-find-container {
   background-color: #F3F8F2;
   box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
-  height: 475px;
+  height: 525px;
   margin-top: 70px; }
   .edit-find-container #edit-find-header {
     font-family: 'Orbitron', sans-serif; }
@@ -317,6 +252,7 @@ body {
   .edit-find-container .edit-p {
     font-family: 'Gafata', sans-serif; }
   .edit-find-container .comment-submit-btn {
+    margin-top: 5px;
     font-family: 'Orbitron', sans-serif;
     background-color: #F0E100;
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75); }
@@ -409,7 +345,6 @@ body {
     background-color: #F3F8F2;
     box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
     height: 400px;
-    width: 675px;
     margin-left: 35px;
     margin-right: 10px;
     margin-top: 40px;

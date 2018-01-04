@@ -1,6 +1,6 @@
 'use strict';
 
-geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, CacheService, HiddenByService) {
+geoApp.controller("HideDetailCtrl", function ($location, ngToast, $routeParams, $scope, CacheService, HiddenByService) {
 
   $scope.date = new Date();
   $scope.cache = {};
@@ -33,12 +33,14 @@ geoApp.controller("HideDetailCtrl", function ($location, $routeParams, $scope, C
   getCache();
 
   $scope.deleteHide = (cache) => {
-    CacheService.getSingleFoundByOthers(cache.id).then((results) => {
-      HiddenByService.deleteMyHide(results.cacheId);
-      HiddenByService.deleteFoundBy(results.id);
+    const deleteHide = HiddenByService.deleteMyHide(cache.id);
+    const deleteFoundBy = HiddenByService.deleteFoundBy(cache.id);
+    const deletePromises = [deleteHide, deleteFoundBy];
+    Promise.all(deletePromises).then(() => {
       $location.path('/hide');
+      $scope.$apply();
     }).catch((error) => {
-      console.log(error);
+      ngToast.danger('Error in deletion!');
     });
   };
 

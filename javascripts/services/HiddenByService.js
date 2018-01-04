@@ -35,6 +35,5 @@ geoApp.service("HiddenByService", function ($http, $q, AuthService, CacheService
     return $http.delete(`${FIREBASE_CONFIG.databaseURL}/foundBy/${cacheId}.json`);
   };
 
-
   return { getAllHidden, deleteMyHide, deleteFoundBy };
 });
