@@ -27,11 +27,11 @@ geoApp.service("CacheService", function ($http, ngToast, $q, $rootScope, AuthSer
   };
 
   const createNewFoundBy = (found) => {
-    let date = new Date();
+    const date = new Date();
     return {
       "cacheId": found.cacheId,
       "comment": found.comment,
-      "dateFound": date,
+      "dateFound": date.toLocaleDateString(),
       "uid": AuthService.getCurrentUid()
     };
   };

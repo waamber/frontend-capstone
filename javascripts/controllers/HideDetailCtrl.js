@@ -2,7 +2,6 @@
 
 geoApp.controller("HideDetailCtrl", function ($location, ngToast, $routeParams, $scope, CacheService, HiddenByService) {
 
-  $scope.date = new Date();
   $scope.cache = {};
   $scope.map = {};
 
