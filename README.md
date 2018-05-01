@@ -5,7 +5,7 @@ For my frontend capstone I decided to build a geocaching application. I really w
 
 This application allows you to browse caches hidden by others and yourself. You can hide, find and edit the caches as well. You also have the ability to earn different badges depending on the accomplishment. 
 
-[Deployed Site](cache-me-outside-f5c39.firebaseapp.com )
+[Deployed Site](https://cache-me-outside-f5c39.firebaseapp.com/#!/dashboard )
 
 ### Dashboard
 ![alt text](https://i.imgur.com/gk75Ns7.png)
